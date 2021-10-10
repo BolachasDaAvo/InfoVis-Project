@@ -1,0 +1,1393 @@
+state,party,year
+Alabama,Republican,1992
+Alabama,Democrat,1993
+Alabama,Democrat,1994
+Alabama,Republican,1995
+Alabama,Republican,1996
+Alabama,Republican,1997
+Alabama,Republican,1998
+Alabama,Democrat,1999
+Alabama,Democrat,2000
+Alabama,Democrat,2001
+Alabama,Democrat,2002
+Alabama,Republican,2003
+Alabama,Republican,2004
+Alabama,Republican,2005
+Alabama,Republican,2006
+Alabama,Republican,2007
+Alabama,Republican,2008
+Alabama,Republican,2009
+Alabama,Republican,2010
+Alabama,Republican,2011
+Alabama,Republican,2012
+Alabama,Republican,2013
+Alabama,Republican,2014
+Alabama,Republican,2015
+Alabama,Republican,2016
+Alabama,Republican,2017
+Alabama,Republican,2018
+Alabama,Republican,2019
+Arizona,Republican,1992
+Arizona,Republican,1993
+Arizona,Republican,1994
+Arizona,Republican,1995
+Arizona,Republican,1996
+Arizona,Republican,1997
+Arizona,Republican,1998
+Arizona,Republican,1999
+Arizona,Republican,2000
+Arizona,Republican,2001
+Arizona,Republican,2002
+Arizona,Democrat,2003
+Arizona,Democrat,2004
+Arizona,Democrat,2005
+Arizona,Democrat,2006
+Arizona,Democrat,2007
+Arizona,Democrat,2008
+Arizona,Republican,2009
+Arizona,Republican,2010
+Arizona,Republican,2011
+Arizona,Republican,2012
+Arizona,Republican,2013
+Arizona,Republican,2014
+Arizona,Republican,2015
+Arizona,Republican,2016
+Arizona,Republican,2017
+Arizona,Republican,2018
+Arizona,Republican,2019
+Arkansas,Democrat,1992
+Arkansas,Democrat,1993
+Arkansas,Democrat,1994
+Arkansas,Democrat,1995
+Arkansas,Republican,1996
+Arkansas,Republican,1997
+Arkansas,Republican,1998
+Arkansas,Republican,1999
+Arkansas,Republican,2000
+Arkansas,Republican,2001
+Arkansas,Republican,2002
+Arkansas,Republican,2003
+Arkansas,Republican,2004
+Arkansas,Republican,2005
+Arkansas,Republican,2006
+Arkansas,Democrat,2007
+Arkansas,Democrat,2008
+Arkansas,Democrat,2009
+Arkansas,Democrat,2010
+Arkansas,Democrat,2011
+Arkansas,Democrat,2012
+Arkansas,Democrat,2013
+Arkansas,Democrat,2014
+Arkansas,Democrat,2015
+Arkansas,Democrat,2016
+Arkansas,Democrat,2017
+Arkansas,Democrat,2018
+Arkansas,Democrat,2019
+California,Republican,1992
+California,Republican,1993
+California,Republican,1994
+California,Republican,1995
+California,Republican,1996
+California,Republican,1997
+California,Republican,1998
+California,Democrat,1999
+California,Democrat,2000
+California,Democrat,2001
+California,Democrat,2002
+California,Republican,2003
+California,Republican,2004
+California,Republican,2005
+California,Republican,2006
+California,Republican,2007
+California,Republican,2008
+California,Republican,2009
+California,Republican,2010
+California,Democrat,2011
+California,Democrat,2012
+California,Democrat,2013
+California,Democrat,2014
+California,Democrat,2015
+California,Democrat,2016
+California,Democrat,2017
+California,Democrat,2018
+California,Democrat,2019
+Colorado,Democrat,1992
+Colorado,Democrat,1993
+Colorado,Democrat,1994
+Colorado,Democrat,1995
+Colorado,Democrat,1996
+Colorado,Democrat,1997
+Colorado,Democrat,1998
+Colorado,Republican,1999
+Colorado,Republican,2000
+Colorado,Republican,2001
+Colorado,Republican,2002
+Colorado,Republican,2003
+Colorado,Republican,2004
+Colorado,Republican,2005
+Colorado,Republican,2006
+Colorado,Democrat,2007
+Colorado,Democrat,2008
+Colorado,Democrat,2009
+Colorado,Democrat,2010
+Colorado,Democrat,2011
+Colorado,Democrat,2012
+Colorado,Democrat,2013
+Colorado,Democrat,2014
+Colorado,Democrat,2015
+Colorado,Democrat,2016
+Colorado,Democrat,2017
+Colorado,Democrat,2018
+Colorado,Democrat,2019
+Connecticut,Independent,1992
+Connecticut,Independent,1993
+Connecticut,Independent,1994
+Connecticut,Republican,1995
+Connecticut,Republican,1996
+Connecticut,Republican,1997
+Connecticut,Republican,1998
+Connecticut,Republican,1999
+Connecticut,Republican,2000
+Connecticut,Republican,2001
+Connecticut,Republican,2002
+Connecticut,Republican,2003
+Connecticut,Republican,2004
+Connecticut,Republican,2005
+Connecticut,Republican,2006
+Connecticut,Republican,2007
+Connecticut,Republican,2008
+Connecticut,Republican,2009
+Connecticut,Republican,2010
+Connecticut,Democrat,2011
+Connecticut,Democrat,2012
+Connecticut,Democrat,2013
+Connecticut,Democrat,2014
+Connecticut,Democrat,2015
+Connecticut,Democrat,2016
+Connecticut,Democrat,2017
+Connecticut,Democrat,2018
+Connecticut,Democrat,2019
+Delaware,Republican,1992
+Delaware,Democrat,1993
+Delaware,Democrat,1994
+Delaware,Democrat,1995
+Delaware,Democrat,1996
+Delaware,Democrat,1997
+Delaware,Democrat,1998
+Delaware,Democrat,1999
+Delaware,Democrat,2000
+Delaware,Democrat,2001
+Delaware,Democrat,2002
+Delaware,Democrat,2003
+Delaware,Democrat,2004
+Delaware,Democrat,2005
+Delaware,Democrat,2006
+Delaware,Democrat,2007
+Delaware,Democrat,2008
+Delaware,Democrat,2009
+Delaware,Democrat,2010
+Delaware,Democrat,2011
+Delaware,Democrat,2012
+Delaware,Democrat,2013
+Delaware,Democrat,2014
+Delaware,Democrat,2015
+Delaware,Democrat,2016
+Delaware,Democrat,2017
+Delaware,Democrat,2018
+Delaware,Democrat,2019
+Florida,Democrat,1992
+Florida,Democrat,1993
+Florida,Democrat,1994
+Florida,Democrat,1995
+Florida,Democrat,1996
+Florida,Democrat,1997
+Florida,Democrat,1998
+Florida,Republican,1999
+Florida,Republican,2000
+Florida,Republican,2001
+Florida,Republican,2002
+Florida,Republican,2003
+Florida,Republican,2004
+Florida,Republican,2005
+Florida,Republican,2006
+Florida,Republican,2007
+Florida,Republican,2008
+Florida,Republican,2009
+Florida,Republican,2010
+Florida,Republican,2011
+Florida,Republican,2012
+Florida,Republican,2013
+Florida,Republican,2014
+Florida,Republican,2015
+Florida,Republican,2016
+Florida,Republican,2017
+Florida,Republican,2018
+Florida,Republican,2019
+Georgia,Democrat,1992
+Georgia,Democrat,1993
+Georgia,Democrat,1994
+Georgia,Democrat,1995
+Georgia,Democrat,1996
+Georgia,Democrat,1997
+Georgia,Democrat,1998
+Georgia,Democrat,1999
+Georgia,Democrat,2000
+Georgia,Democrat,2001
+Georgia,Democrat,2002
+Georgia,Republican,2003
+Georgia,Republican,2004
+Georgia,Republican,2005
+Georgia,Republican,2006
+Georgia,Republican,2007
+Georgia,Republican,2008
+Georgia,Republican,2009
+Georgia,Republican,2010
+Georgia,Republican,2011
+Georgia,Republican,2012
+Georgia,Republican,2013
+Georgia,Republican,2014
+Georgia,Republican,2015
+Georgia,Republican,2016
+Georgia,Republican,2017
+Georgia,Republican,2018
+Georgia,Republican,2019
+Idaho,Democrat,1992
+Idaho,Democrat,1993
+Idaho,Democrat,1994
+Idaho,Republican,1995
+Idaho,Republican,1996
+Idaho,Republican,1997
+Idaho,Republican,1998
+Idaho,Republican,1999
+Idaho,Republican,2000
+Idaho,Republican,2001
+Idaho,Republican,2002
+Idaho,Republican,2003
+Idaho,Republican,2004
+Idaho,Republican,2005
+Idaho,Republican,2006
+Idaho,Republican,2007
+Idaho,Republican,2008
+Idaho,Republican,2009
+Idaho,Republican,2010
+Idaho,Republican,2011
+Idaho,Republican,2012
+Idaho,Republican,2013
+Idaho,Republican,2014
+Idaho,Republican,2015
+Idaho,Republican,2016
+Idaho,Republican,2017
+Idaho,Republican,2018
+Idaho,Republican,2019
+Illinois,Republican,1992
+Illinois,Republican,1993
+Illinois,Republican,1994
+Illinois,Republican,1995
+Illinois,Republican,1996
+Illinois,Republican,1997
+Illinois,Republican,1998
+Illinois,Republican,1999
+Illinois,Republican,2000
+Illinois,Republican,2001
+Illinois,Republican,2002
+Illinois,Democrat,2003
+Illinois,Democrat,2004
+Illinois,Democrat,2005
+Illinois,Democrat,2006
+Illinois,Democrat,2007
+Illinois,Democrat,2008
+Illinois,Democrat,2009
+Illinois,Democrat,2010
+Illinois,Democrat,2011
+Illinois,Democrat,2012
+Illinois,Democrat,2013
+Illinois,Democrat,2014
+Illinois,Republican,2015
+Illinois,Republican,2016
+Illinois,Republican,2017
+Illinois,Republican,2018
+Illinois,Republican,2019
+Indiana,Democrat,1992
+Indiana,Democrat,1993
+Indiana,Democrat,1994
+Indiana,Democrat,1995
+Indiana,Democrat,1996
+Indiana,Democrat,1997
+Indiana,Democrat,1998
+Indiana,Democrat,1999
+Indiana,Democrat,2000
+Indiana,Democrat,2001
+Indiana,Democrat,2002
+Indiana,Democrat,2003
+Indiana,Democrat,2004
+Indiana,Republican,2005
+Indiana,Republican,2006
+Indiana,Republican,2007
+Indiana,Republican,2008
+Indiana,Republican,2009
+Indiana,Republican,2010
+Indiana,Republican,2011
+Indiana,Republican,2012
+Indiana,Republican,2013
+Indiana,Republican,2014
+Indiana,Republican,2015
+Indiana,Republican,2016
+Indiana,Republican,2017
+Indiana,Republican,2018
+Indiana,Republican,2019
+Iowa,Republican,1992
+Iowa,Republican,1993
+Iowa,Republican,1994
+Iowa,Republican,1995
+Iowa,Republican,1996
+Iowa,Republican,1997
+Iowa,Republican,1998
+Iowa,Republican,1999
+Iowa,Democrat,2000
+Iowa,Democrat,2001
+Iowa,Democrat,2002
+Iowa,Democrat,2003
+Iowa,Democrat,2004
+Iowa,Democrat,2005
+Iowa,Democrat,2006
+Iowa,Democrat,2007
+Iowa,Democrat,2008
+Iowa,Democrat,2009
+Iowa,Democrat,2010
+Iowa,Republican,2011
+Iowa,Republican,2012
+Iowa,Republican,2013
+Iowa,Republican,2014
+Iowa,Republican,2015
+Iowa,Republican,2016
+Iowa,Republican,2017
+Iowa,Republican,2018
+Iowa,Republican,2019
+Kansas,Democrat,1992
+Kansas,Democrat,1993
+Kansas,Democrat,1994
+Kansas,Republican,1995
+Kansas,Republican,1996
+Kansas,Republican,1997
+Kansas,Republican,1998
+Kansas,Republican,1999
+Kansas,Republican,2000
+Kansas,Republican,2001
+Kansas,Republican,2002
+Kansas,Democrat,2003
+Kansas,Democrat,2004
+Kansas,Democrat,2005
+Kansas,Democrat,2006
+Kansas,Democrat,2007
+Kansas,Democrat,2008
+Kansas,Democrat,2009
+Kansas,Democrat,2010
+Kansas,Republican,2011
+Kansas,Republican,2012
+Kansas,Republican,2013
+Kansas,Republican,2014
+Kansas,Republican,2015
+Kansas,Republican,2016
+Kansas,Republican,2017
+Kansas,Republican,2018
+Kansas,Republican,2019
+Kentucky,Democrat,1992
+Kentucky,Democrat,1993
+Kentucky,Democrat,1994
+Kentucky,Democrat,1995
+Kentucky,Democrat,1996
+Kentucky,Democrat,1997
+Kentucky,Democrat,1998
+Kentucky,Democrat,1999
+Kentucky,Democrat,2000
+Kentucky,Democrat,2001
+Kentucky,Democrat,2002
+Kentucky,Republican,2003
+Kentucky,Republican,2004
+Kentucky,Republican,2005
+Kentucky,Republican,2006
+Kentucky,Democrat,2007
+Kentucky,Democrat,2008
+Kentucky,Democrat,2009
+Kentucky,Democrat,2010
+Kentucky,Democrat,2011
+Kentucky,Democrat,2012
+Kentucky,Democrat,2013
+Kentucky,Democrat,2014
+Kentucky,Republican,2015
+Kentucky,Republican,2016
+Kentucky,Republican,2017
+Kentucky,Republican,2018
+Kentucky,Republican,2019
+Louisiana,Republican,1992
+Louisiana,Republican,1993
+Louisiana,Republican,1994
+Louisiana,Republican,1995
+Louisiana,Republican,1996
+Louisiana,Republican,1997
+Louisiana,Republican,1998
+Louisiana,Republican,1999
+Louisiana,Republican,2000
+Louisiana,Republican,2001
+Louisiana,Republican,2002
+Louisiana,Republican,2003
+Louisiana,Democrat,2004
+Louisiana,Democrat,2005
+Louisiana,Democrat,2006
+Louisiana,Democrat,2007
+Louisiana,Republican,2008
+Louisiana,Republican,2009
+Louisiana,Republican,2010
+Louisiana,Republican,2011
+Louisiana,Republican,2012
+Louisiana,Republican,2013
+Louisiana,Republican,2014
+Louisiana,Republican,2015
+Louisiana,Republican,2016
+Louisiana,Republican,2017
+Louisiana,Republican,2018
+Louisiana,Republican,2019
+Maine,Republican,1992
+Maine,Republican,1993
+Maine,Republican,1994
+Maine,Independent,1995
+Maine,Independent,1996
+Maine,Independent,1997
+Maine,Independent,1998
+Maine,Independent,1999
+Maine,Independent,2000
+Maine,Independent,2001
+Maine,Independent,2002
+Maine,Democrat,2003
+Maine,Democrat,2004
+Maine,Democrat,2005
+Maine,Democrat,2006
+Maine,Democrat,2007
+Maine,Democrat,2008
+Maine,Democrat,2009
+Maine,Democrat,2010
+Maine,Republican,2011
+Maine,Republican,2012
+Maine,Republican,2013
+Maine,Republican,2014
+Maine,Republican,2015
+Maine,Republican,2016
+Maine,Republican,2017
+Maine,Republican,2018
+Maine,Republican,2019
+Maryland,Democrat,1992
+Maryland,Democrat,1993
+Maryland,Democrat,1994
+Maryland,Democrat,1995
+Maryland,Democrat,1996
+Maryland,Democrat,1997
+Maryland,Democrat,1998
+Maryland,Democrat,1999
+Maryland,Democrat,2000
+Maryland,Democrat,2001
+Maryland,Democrat,2002
+Maryland,Republican,2003
+Maryland,Republican,2004
+Maryland,Republican,2005
+Maryland,Republican,2006
+Maryland,Democrat,2007
+Maryland,Democrat,2008
+Maryland,Democrat,2009
+Maryland,Democrat,2010
+Maryland,Democrat,2011
+Maryland,Democrat,2012
+Maryland,Democrat,2013
+Maryland,Democrat,2014
+Maryland,Democrat,2015
+Maryland,Democrat,2016
+Maryland,Democrat,2017
+Maryland,Democrat,2018
+Maryland,Democrat,2019
+Massachusetts,Republican,1992
+Massachusetts,Republican,1993
+Massachusetts,Republican,1994
+Massachusetts,Republican,1995
+Massachusetts,Republican,1996
+Massachusetts,Republican,1997
+Massachusetts,Republican,1998
+Massachusetts,Republican,1999
+Massachusetts,Republican,2000
+Massachusetts,Republican,2001
+Massachusetts,Republican,2002
+Massachusetts,Republican,2003
+Massachusetts,Republican,2004
+Massachusetts,Republican,2005
+Massachusetts,Republican,2006
+Massachusetts,Democrat,2007
+Massachusetts,Democrat,2008
+Massachusetts,Democrat,2009
+Massachusetts,Democrat,2010
+Massachusetts,Democrat,2011
+Massachusetts,Democrat,2012
+Massachusetts,Democrat,2013
+Massachusetts,Democrat,2014
+Massachusetts,Democrat,2015
+Massachusetts,Democrat,2016
+Massachusetts,Democrat,2017
+Massachusetts,Democrat,2018
+Massachusetts,Democrat,2019
+Michigan,Republican,1992
+Michigan,Republican,1993
+Michigan,Republican,1994
+Michigan,Republican,1995
+Michigan,Republican,1996
+Michigan,Republican,1997
+Michigan,Republican,1998
+Michigan,Republican,1999
+Michigan,Republican,2000
+Michigan,Republican,2001
+Michigan,Republican,2002
+Michigan,Democrat,2003
+Michigan,Democrat,2004
+Michigan,Democrat,2005
+Michigan,Democrat,2006
+Michigan,Democrat,2007
+Michigan,Democrat,2008
+Michigan,Democrat,2009
+Michigan,Democrat,2010
+Michigan,Republican,2011
+Michigan,Republican,2012
+Michigan,Republican,2013
+Michigan,Republican,2014
+Michigan,Republican,2015
+Michigan,Republican,2016
+Michigan,Republican,2017
+Michigan,Republican,2018
+Michigan,Republican,2019
+Minnesota,Republican,1992
+Minnesota,Republican,1993
+Minnesota,Republican,1994
+Minnesota,Republican,1995
+Minnesota,Republican,1996
+Minnesota,Republican,1997
+Minnesota,Republican,1998
+Minnesota,Independent,1999
+Minnesota,Independent,2000
+Minnesota,Independent,2001
+Minnesota,Independent,2002
+Minnesota,Republican,2003
+Minnesota,Republican,2004
+Minnesota,Republican,2005
+Minnesota,Republican,2006
+Minnesota,Republican,2007
+Minnesota,Republican,2008
+Minnesota,Republican,2009
+Minnesota,Republican,2010
+Minnesota,Democrat,2011
+Minnesota,Democrat,2012
+Minnesota,Democrat,2013
+Minnesota,Democrat,2014
+Minnesota,Democrat,2015
+Minnesota,Democrat,2016
+Minnesota,Democrat,2017
+Minnesota,Democrat,2018
+Minnesota,Democrat,2019
+Mississippi,Republican,1992
+Mississippi,Republican,1993
+Mississippi,Republican,1994
+Mississippi,Republican,1995
+Mississippi,Republican,1996
+Mississippi,Republican,1997
+Mississippi,Republican,1998
+Mississippi,Republican,1999
+Mississippi,Democrat,2000
+Mississippi,Democrat,2001
+Mississippi,Democrat,2002
+Mississippi,Democrat,2003
+Mississippi,Republican,2004
+Mississippi,Republican,2005
+Mississippi,Republican,2006
+Mississippi,Republican,2007
+Mississippi,Republican,2008
+Mississippi,Republican,2009
+Mississippi,Republican,2010
+Mississippi,Republican,2011
+Mississippi,Republican,2012
+Mississippi,Republican,2013
+Mississippi,Republican,2014
+Mississippi,Republican,2015
+Mississippi,Republican,2016
+Mississippi,Republican,2017
+Mississippi,Republican,2018
+Mississippi,Republican,2019
+Mississippi,Republican,2020
+Missouri,Republican,1992
+Missouri,Democrat,1993
+Missouri,Democrat,1994
+Missouri,Democrat,1995
+Missouri,Democrat,1996
+Missouri,Democrat,1997
+Missouri,Democrat,1998
+Missouri,Democrat,1999
+Missouri,Democrat,2000
+Missouri,Democrat,2001
+Missouri,Democrat,2002
+Missouri,Democrat,2003
+Missouri,Democrat,2004
+Missouri,Republican,2005
+Missouri,Republican,2006
+Missouri,Republican,2007
+Missouri,Republican,2008
+Missouri,Democrat,2009
+Missouri,Democrat,2010
+Missouri,Democrat,2011
+Missouri,Democrat,2012
+Missouri,Democrat,2013
+Missouri,Democrat,2014
+Missouri,Democrat,2015
+Missouri,Democrat,2016
+Missouri,Republican,2017
+Missouri,Republican,2018
+Missouri,Republican,2019
+Montana,Republican,1992
+Montana,Republican,1993
+Montana,Republican,1994
+Montana,Republican,1995
+Montana,Republican,1996
+Montana,Republican,1997
+Montana,Republican,1998
+Montana,Republican,1999
+Montana,Republican,2000
+Montana,Republican,2001
+Montana,Republican,2002
+Montana,Republican,2003
+Montana,Republican,2004
+Montana,Democrat,2005
+Montana,Democrat,2006
+Montana,Democrat,2007
+Montana,Democrat,2008
+Montana,Democrat,2009
+Montana,Democrat,2010
+Montana,Democrat,2011
+Montana,Democrat,2012
+Montana,Democrat,2013
+Montana,Democrat,2014
+Montana,Democrat,2015
+Montana,Democrat,2016
+Montana,Democrat,2017
+Montana,Democrat,2018
+Montana,Democrat,2019
+Nebraska,Democrat,1992
+Nebraska,Democrat,1993
+Nebraska,Democrat,1994
+Nebraska,Democrat,1995
+Nebraska,Democrat,1996
+Nebraska,Democrat,1997
+Nebraska,Democrat,1998
+Nebraska,Republican,1999
+Nebraska,Republican,2000
+Nebraska,Republican,2001
+Nebraska,Republican,2002
+Nebraska,Republican,2003
+Nebraska,Republican,2004
+Nebraska,Republican,2005
+Nebraska,Republican,2006
+Nebraska,Republican,2007
+Nebraska,Republican,2008
+Nebraska,Republican,2009
+Nebraska,Republican,2010
+Nebraska,Republican,2011
+Nebraska,Republican,2012
+Nebraska,Republican,2013
+Nebraska,Republican,2014
+Nebraska,Republican,2015
+Nebraska,Republican,2016
+Nebraska,Republican,2017
+Nebraska,Republican,2018
+Nebraska,Republican,2019
+Nevada,Democrat,1992
+Nevada,Democrat,1993
+Nevada,Democrat,1994
+Nevada,Democrat,1995
+Nevada,Democrat,1996
+Nevada,Democrat,1997
+Nevada,Democrat,1998
+Nevada,Republican,1999
+Nevada,Republican,2000
+Nevada,Republican,2001
+Nevada,Republican,2002
+Nevada,Republican,2003
+Nevada,Republican,2004
+Nevada,Republican,2005
+Nevada,Republican,2006
+Nevada,Republican,2007
+Nevada,Republican,2008
+Nevada,Republican,2009
+Nevada,Republican,2010
+Nevada,Republican,2011
+Nevada,Republican,2012
+Nevada,Republican,2013
+Nevada,Republican,2014
+Nevada,Republican,2015
+Nevada,Republican,2016
+Nevada,Republican,2017
+Nevada,Republican,2018
+Nevada,Republican,2019
+New Hampshire,Republican,1992
+New Hampshire,Republican,1993
+New Hampshire,Republican,1994
+New Hampshire,Republican,1995
+New Hampshire,Republican,1996
+New Hampshire,Democrat,1997
+New Hampshire,Democrat,1998
+New Hampshire,Democrat,1999
+New Hampshire,Democrat,2000
+New Hampshire,Democrat,2001
+New Hampshire,Democrat,2002
+New Hampshire,Republican,2003
+New Hampshire,Republican,2004
+New Hampshire,Democrat,2005
+New Hampshire,Democrat,2006
+New Hampshire,Democrat,2007
+New Hampshire,Democrat,2008
+New Hampshire,Democrat,2009
+New Hampshire,Democrat,2010
+New Hampshire,Democrat,2011
+New Hampshire,Democrat,2012
+New Hampshire,Democrat,2013
+New Hampshire,Democrat,2014
+New Hampshire,Democrat,2015
+New Hampshire,Democrat,2016
+New Hampshire,Republican,2017
+New Hampshire,Democrat,2018
+New Hampshire,Democrat,2019
+New Jersey,Democrat,1992
+New Jersey,Democrat,1993
+New Jersey,Republican,1994
+New Jersey,Republican,1995
+New Jersey,Republican,1996
+New Jersey,Republican,1997
+New Jersey,Republican,1998
+New Jersey,Republican,1999
+New Jersey,Republican,2000
+New Jersey,Republican,2001
+New Jersey,Democrat,2002
+New Jersey,Democrat,2003
+New Jersey,Democrat,2004
+New Jersey,Democrat,2005
+New Jersey,Democrat,2006
+New Jersey,Democrat,2007
+New Jersey,Democrat,2008
+New Jersey,Democrat,2009
+New Jersey,Republican,2010
+New Jersey,Republican,2011
+New Jersey,Republican,2012
+New Jersey,Republican,2013
+New Jersey,Republican,2014
+New Jersey,Republican,2015
+New Jersey,Republican,2016
+New Jersey,Republican,2017
+New Jersey,Republican,2018
+New Jersey,Republican,2019
+New Mexico,Democrat,1992
+New Mexico,Democrat,1993
+New Mexico,Democrat,1994
+New Mexico,Republican,1995
+New Mexico,Republican,1996
+New Mexico,Republican,1997
+New Mexico,Republican,1998
+New Mexico,Republican,1999
+New Mexico,Republican,2000
+New Mexico,Republican,2001
+New Mexico,Republican,2002
+New Mexico,Democrat,2003
+New Mexico,Democrat,2004
+New Mexico,Democrat,2005
+New Mexico,Democrat,2006
+New Mexico,Democrat,2007
+New Mexico,Democrat,2008
+New Mexico,Democrat,2009
+New Mexico,Democrat,2010
+New Mexico,Republican,2011
+New Mexico,Republican,2012
+New Mexico,Republican,2013
+New Mexico,Republican,2014
+New Mexico,Republican,2015
+New Mexico,Republican,2016
+New Mexico,Republican,2017
+New Mexico,Republican,2018
+New Mexico,Republican,2019
+New York,Democrat,1992
+New York,Democrat,1993
+New York,Democrat,1994
+New York,Republican,1995
+New York,Republican,1996
+New York,Republican,1997
+New York,Republican,1998
+New York,Republican,1999
+New York,Republican,2000
+New York,Republican,2001
+New York,Republican,2002
+New York,Republican,2003
+New York,Republican,2004
+New York,Republican,2005
+New York,Republican,2006
+New York,Democrat,2007
+New York,Democrat,2008
+New York,Democrat,2009
+New York,Democrat,2010
+New York,Democrat,2011
+New York,Democrat,2012
+New York,Democrat,2013
+New York,Democrat,2014
+New York,Democrat,2015
+New York,Democrat,2016
+New York,Democrat,2017
+New York,Democrat,2018
+New York,Democrat,2019
+North Carolina,Republican,1992
+North Carolina,Democrat,1993
+North Carolina,Democrat,1994
+North Carolina,Democrat,1995
+North Carolina,Democrat,1996
+North Carolina,Democrat,1997
+North Carolina,Democrat,1998
+North Carolina,Democrat,1999
+North Carolina,Democrat,2000
+North Carolina,Democrat,2001
+North Carolina,Democrat,2002
+North Carolina,Democrat,2003
+North Carolina,Democrat,2004
+North Carolina,Democrat,2005
+North Carolina,Democrat,2006
+North Carolina,Democrat,2007
+North Carolina,Democrat,2008
+North Carolina,Democrat,2009
+North Carolina,Democrat,2010
+North Carolina,Democrat,2011
+North Carolina,Democrat,2012
+North Carolina,Republican,2013
+North Carolina,Republican,2014
+North Carolina,Republican,2015
+North Carolina,Republican,2016
+North Carolina,Republican,2017
+North Carolina,Republican,2018
+North Carolina,Republican,2019
+North Dakota,Republican,1992
+North Dakota,Republican,1993
+North Dakota,Republican,1994
+North Dakota,Republican,1995
+North Dakota,Republican,1996
+North Dakota,Republican,1997
+North Dakota,Republican,1998
+North Dakota,Republican,1999
+North Dakota,Republican,2000
+North Dakota,Republican,2001
+North Dakota,Republican,2002
+North Dakota,Republican,2003
+North Dakota,Republican,2004
+North Dakota,Republican,2005
+North Dakota,Republican,2006
+North Dakota,Republican,2007
+North Dakota,Republican,2008
+North Dakota,Republican,2009
+North Dakota,Republican,2010
+North Dakota,Republican,2011
+North Dakota,Republican,2012
+North Dakota,Republican,2013
+North Dakota,Republican,2014
+North Dakota,Republican,2015
+North Dakota,Republican,2016
+North Dakota,Republican,2017
+North Dakota,Republican,2018
+North Dakota,Republican,2019
+Ohio,Republican,1992
+Ohio,Republican,1993
+Ohio,Republican,1994
+Ohio,Republican,1995
+Ohio,Republican,1996
+Ohio,Republican,1997
+Ohio,Republican,1998
+Ohio,Republican,1999
+Ohio,Republican,2000
+Ohio,Republican,2001
+Ohio,Republican,2002
+Ohio,Republican,2003
+Ohio,Republican,2004
+Ohio,Republican,2005
+Ohio,Republican,2006
+Ohio,Democrat,2007
+Ohio,Democrat,2008
+Ohio,Democrat,2009
+Ohio,Democrat,2010
+Ohio,Republican,2011
+Ohio,Republican,2012
+Ohio,Republican,2013
+Ohio,Republican,2014
+Ohio,Republican,2015
+Ohio,Republican,2016
+Ohio,Republican,2017
+Ohio,Republican,2018
+Ohio,Republican,2019
+Oklahoma,Democrat,1992
+Oklahoma,Democrat,1993
+Oklahoma,Democrat,1994
+Oklahoma,Republican,1995
+Oklahoma,Republican,1996
+Oklahoma,Republican,1997
+Oklahoma,Republican,1998
+Oklahoma,Republican,1999
+Oklahoma,Republican,2000
+Oklahoma,Republican,2001
+Oklahoma,Republican,2002
+Oklahoma,Democrat,2003
+Oklahoma,Democrat,2004
+Oklahoma,Democrat,2005
+Oklahoma,Democrat,2006
+Oklahoma,Democrat,2007
+Oklahoma,Democrat,2008
+Oklahoma,Democrat,2009
+Oklahoma,Democrat,2010
+Oklahoma,Republican,2011
+Oklahoma,Republican,2012
+Oklahoma,Republican,2013
+Oklahoma,Republican,2014
+Oklahoma,Republican,2015
+Oklahoma,Republican,2016
+Oklahoma,Republican,2017
+Oklahoma,Republican,2018
+Oklahoma,Republican,2019
+Oregon,Democrat,1992
+Oregon,Democrat,1993
+Oregon,Democrat,1994
+Oregon,Democrat,1995
+Oregon,Democrat,1996
+Oregon,Democrat,1997
+Oregon,Democrat,1998
+Oregon,Democrat,1999
+Oregon,Democrat,2000
+Oregon,Democrat,2001
+Oregon,Democrat,2002
+Oregon,Democrat,2003
+Oregon,Democrat,2004
+Oregon,Democrat,2005
+Oregon,Democrat,2006
+Oregon,Democrat,2007
+Oregon,Democrat,2008
+Oregon,Democrat,2009
+Oregon,Democrat,2010
+Oregon,Democrat,2011
+Oregon,Democrat,2012
+Oregon,Democrat,2013
+Oregon,Democrat,2014
+Oregon,Democrat,2015
+Oregon,Democrat,2016
+Oregon,Democrat,2017
+Oregon,Democrat,2018
+Oregon,Democrat,2019
+Pennsylvania,Democrat,1992
+Pennsylvania,Democrat,1993
+Pennsylvania,Democrat,1994
+Pennsylvania,Republican,1995
+Pennsylvania,Republican,1996
+Pennsylvania,Republican,1997
+Pennsylvania,Republican,1998
+Pennsylvania,Republican,1999
+Pennsylvania,Republican,2000
+Pennsylvania,Republican,2001
+Pennsylvania,Republican,2002
+Pennsylvania,Democrat,2003
+Pennsylvania,Democrat,2004
+Pennsylvania,Democrat,2005
+Pennsylvania,Democrat,2006
+Pennsylvania,Democrat,2007
+Pennsylvania,Democrat,2008
+Pennsylvania,Democrat,2009
+Pennsylvania,Democrat,2010
+Pennsylvania,Republican,2011
+Pennsylvania,Republican,2012
+Pennsylvania,Republican,2013
+Pennsylvania,Republican,2014
+Pennsylvania,Republican,2015
+Pennsylvania,Republican,2016
+Pennsylvania,Republican,2017
+Pennsylvania,Republican,2018
+Pennsylvania,Republican,2019
+Rhode Island,Democrat,1992
+Rhode Island,Democrat,1993
+Rhode Island,Democrat,1994
+Rhode Island,Republican,1995
+Rhode Island,Republican,1996
+Rhode Island,Republican,1997
+Rhode Island,Republican,1998
+Rhode Island,Republican,1999
+Rhode Island,Republican,2000
+Rhode Island,Republican,2001
+Rhode Island,Republican,2002
+Rhode Island,Republican,2003
+Rhode Island,Republican,2004
+Rhode Island,Republican,2005
+Rhode Island,Republican,2006
+Rhode Island,Republican,2007
+Rhode Island,Republican,2008
+Rhode Island,Republican,2009
+Rhode Island,Republican,2010
+Rhode Island,Democrat,2011
+Rhode Island,Democrat,2012
+Rhode Island,Democrat,2013
+Rhode Island,Democrat,2014
+Rhode Island,Democrat,2015
+Rhode Island,Democrat,2016
+Rhode Island,Democrat,2017
+Rhode Island,Democrat,2018
+Rhode Island,Democrat,2019
+South Carolina,Republican,1992
+South Carolina,Republican,1993
+South Carolina,Republican,1994
+South Carolina,Republican,1995
+South Carolina,Republican,1996
+South Carolina,Republican,1997
+South Carolina,Republican,1998
+South Carolina,Democrat,1999
+South Carolina,Democrat,2000
+South Carolina,Democrat,2001
+South Carolina,Democrat,2002
+South Carolina,Republican,2003
+South Carolina,Republican,2004
+South Carolina,Republican,2005
+South Carolina,Republican,2006
+South Carolina,Republican,2007
+South Carolina,Republican,2008
+South Carolina,Republican,2009
+South Carolina,Republican,2010
+South Carolina,Republican,2011
+South Carolina,Republican,2012
+South Carolina,Republican,2013
+South Carolina,Republican,2014
+South Carolina,Republican,2015
+South Carolina,Republican,2016
+South Carolina,Republican,2017
+South Carolina,Republican,2018
+South Carolina,Republican,2019
+South Dakota,Republican,1992
+South Dakota,Republican,1993
+South Dakota,Republican,1994
+South Dakota,Republican,1995
+South Dakota,Republican,1996
+South Dakota,Republican,1997
+South Dakota,Republican,1998
+South Dakota,Republican,1999
+South Dakota,Republican,2000
+South Dakota,Republican,2001
+South Dakota,Republican,2002
+South Dakota,Republican,2003
+South Dakota,Republican,2004
+South Dakota,Republican,2005
+South Dakota,Republican,2006
+South Dakota,Republican,2007
+South Dakota,Republican,2008
+South Dakota,Republican,2009
+South Dakota,Republican,2010
+South Dakota,Republican,2011
+South Dakota,Republican,2012
+South Dakota,Republican,2013
+South Dakota,Republican,2014
+South Dakota,Republican,2015
+South Dakota,Republican,2016
+South Dakota,Republican,2017
+South Dakota,Republican,2018
+South Dakota,Republican,2019
+Tennessee,Democrat,1992
+Tennessee,Democrat,1993
+Tennessee,Democrat,1994
+Tennessee,Republican,1995
+Tennessee,Republican,1996
+Tennessee,Republican,1997
+Tennessee,Republican,1998
+Tennessee,Republican,1999
+Tennessee,Republican,2000
+Tennessee,Republican,2001
+Tennessee,Republican,2002
+Tennessee,Democrat,2003
+Tennessee,Democrat,2004
+Tennessee,Democrat,2005
+Tennessee,Democrat,2006
+Tennessee,Democrat,2007
+Tennessee,Democrat,2008
+Tennessee,Democrat,2009
+Tennessee,Democrat,2010
+Tennessee,Republican,2011
+Tennessee,Republican,2012
+Tennessee,Republican,2013
+Tennessee,Republican,2014
+Tennessee,Republican,2015
+Tennessee,Republican,2016
+Tennessee,Republican,2017
+Tennessee,Republican,2018
+Tennessee,Republican,2019
+Texas,Democrat,1992
+Texas,Democrat,1993
+Texas,Democrat,1994
+Texas,Republican,1995
+Texas,Republican,1996
+Texas,Republican,1997
+Texas,Republican,1998
+Texas,Republican,1999
+Texas,Republican,2000
+Texas,Republican,2001
+Texas,Republican,2002
+Texas,Republican,2003
+Texas,Republican,2004
+Texas,Republican,2005
+Texas,Republican,2006
+Texas,Republican,2007
+Texas,Republican,2008
+Texas,Republican,2009
+Texas,Republican,2010
+Texas,Republican,2011
+Texas,Republican,2012
+Texas,Republican,2013
+Texas,Republican,2014
+Texas,Republican,2015
+Texas,Republican,2016
+Texas,Republican,2017
+Texas,Republican,2018
+Texas,Republican,2019
+Utah,Republican,1992
+Utah,Republican,1993
+Utah,Republican,1994
+Utah,Republican,1995
+Utah,Republican,1996
+Utah,Republican,1997
+Utah,Republican,1998
+Utah,Republican,1999
+Utah,Republican,2000
+Utah,Republican,2001
+Utah,Republican,2002
+Utah,Republican,2003
+Utah,Republican,2004
+Utah,Republican,2005
+Utah,Republican,2006
+Utah,Republican,2007
+Utah,Republican,2008
+Utah,Republican,2009
+Utah,Republican,2010
+Utah,Republican,2011
+Utah,Republican,2012
+Utah,Republican,2013
+Utah,Republican,2014
+Utah,Republican,2015
+Utah,Republican,2016
+Utah,Republican,2017
+Utah,Republican,2018
+Utah,Republican,2019
+Vermont,Democrat,1992
+Vermont,Democrat,1993
+Vermont,Democrat,1994
+Vermont,Democrat,1995
+Vermont,Democrat,1996
+Vermont,Democrat,1997
+Vermont,Democrat,1998
+Vermont,Democrat,1999
+Vermont,Democrat,2000
+Vermont,Democrat,2001
+Vermont,Democrat,2002
+Vermont,Republican,2003
+Vermont,Republican,2004
+Vermont,Republican,2005
+Vermont,Republican,2006
+Vermont,Republican,2007
+Vermont,Republican,2008
+Vermont,Republican,2009
+Vermont,Republican,2010
+Vermont,Democrat,2011
+Vermont,Democrat,2012
+Vermont,Democrat,2013
+Vermont,Democrat,2014
+Vermont,Democrat,2015
+Vermont,Democrat,2016
+Vermont,Democrat,2017
+Vermont,Democrat,2018
+Vermont,Democrat,2019
+Virginia,Democrat,1992
+Virginia,Democrat,1993
+Virginia,Republican,1994
+Virginia,Republican,1995
+Virginia,Republican,1996
+Virginia,Republican,1997
+Virginia,Republican,1998
+Virginia,Republican,1999
+Virginia,Republican,2000
+Virginia,Republican,2001
+Virginia,Democrat,2002
+Virginia,Democrat,2003
+Virginia,Democrat,2004
+Virginia,Democrat,2005
+Virginia,Democrat,2006
+Virginia,Democrat,2007
+Virginia,Democrat,2008
+Virginia,Democrat,2009
+Virginia,Republican,2010
+Virginia,Republican,2011
+Virginia,Republican,2012
+Virginia,Republican,2013
+Virginia,Democrat,2014
+Virginia,Democrat,2015
+Virginia,Democrat,2016
+Virginia,Democrat,2017
+Virginia,Democrat,2018
+Virginia,Democrat,2019
+Washington,Democrat,1992
+Washington,Democrat,1993
+Washington,Democrat,1994
+Washington,Democrat,1995
+Washington,Democrat,1996
+Washington,Democrat,1997
+Washington,Democrat,1998
+Washington,Democrat,1999
+Washington,Democrat,2000
+Washington,Democrat,2001
+Washington,Democrat,2002
+Washington,Democrat,2003
+Washington,Democrat,2004
+Washington,Democrat,2005
+Washington,Democrat,2006
+Washington,Democrat,2007
+Washington,Democrat,2008
+Washington,Democrat,2009
+Washington,Democrat,2010
+Washington,Democrat,2011
+Washington,Democrat,2012
+Washington,Democrat,2013
+Washington,Democrat,2014
+Washington,Democrat,2015
+Washington,Democrat,2016
+Washington,Democrat,2017
+Washington,Democrat,2018
+Washington,Democrat,2019
+West Virginia,Democrat,1992
+West Virginia,Democrat,1993
+West Virginia,Democrat,1994
+West Virginia,Democrat,1995
+West Virginia,Democrat,1996
+West Virginia,Republican,1997
+West Virginia,Republican,1998
+West Virginia,Republican,1999
+West Virginia,Republican,2000
+West Virginia,Democrat,2001
+West Virginia,Democrat,2002
+West Virginia,Democrat,2003
+West Virginia,Democrat,2004
+West Virginia,Democrat,2005
+West Virginia,Democrat,2006
+West Virginia,Democrat,2007
+West Virginia,Democrat,2008
+West Virginia,Democrat,2009
+West Virginia,Democrat,2010
+West Virginia,Democrat,2011
+West Virginia,Democrat,2012
+West Virginia,Democrat,2013
+West Virginia,Democrat,2014
+West Virginia,Democrat,2015
+West Virginia,Democrat,2016
+West Virginia,Democrat,2017
+West Virginia,Democrat,2018
+West Virginia,Democrat,2019
+Wisconsin,Republican,1992
+Wisconsin,Republican,1993
+Wisconsin,Republican,1994
+Wisconsin,Republican,1995
+Wisconsin,Republican,1996
+Wisconsin,Republican,1997
+Wisconsin,Republican,1998
+Wisconsin,Republican,1999
+Wisconsin,Republican,2000
+Wisconsin,Republican,2001
+Wisconsin,Republican,2002
+Wisconsin,Democrat,2003
+Wisconsin,Democrat,2004
+Wisconsin,Democrat,2005
+Wisconsin,Democrat,2006
+Wisconsin,Democrat,2007
+Wisconsin,Democrat,2008
+Wisconsin,Democrat,2009
+Wisconsin,Democrat,2010
+Wisconsin,Republican,2011
+Wisconsin,Republican,2012
+Wisconsin,Republican,2013
+Wisconsin,Republican,2014
+Wisconsin,Republican,2015
+Wisconsin,Republican,2016
+Wisconsin,Republican,2017
+Wisconsin,Republican,2018
+Wisconsin,Republican,2019
+Wyoming,Democrat,1992
+Wyoming,Democrat,1993
+Wyoming,Democrat,1994
+Wyoming,Republican,1995
+Wyoming,Republican,1996
+Wyoming,Republican,1997
+Wyoming,Republican,1998
+Wyoming,Republican,1999
+Wyoming,Republican,2000
+Wyoming,Republican,2001
+Wyoming,Republican,2002
+Wyoming,Democrat,2003
+Wyoming,Democrat,2004
+Wyoming,Democrat,2005
+Wyoming,Democrat,2006
+Wyoming,Democrat,2007
+Wyoming,Democrat,2008
+Wyoming,Democrat,2009
+Wyoming,Democrat,2010
+Wyoming,Republican,2011
+Wyoming,Republican,2012
+Wyoming,Republican,2013
+Wyoming,Republican,2014
+Wyoming,Republican,2015
+Wyoming,Republican,2016
+Wyoming,Republican,2017
+Wyoming,Republican,2018
+Wyoming,Republican,2019
+Kansas,Republican,2020
+Missouri,Republican,2020
+New Hampshire,Republican,2020
+Kentucky,Republican,2020
+West Virginia,Republican,2020
+Colorado,Republican,2020
+Georgia,Republican,2020
+Illinois,Republican,2020
+Connecticut,Republican,2020
+Florida,Republican,2020
+Virginia,Republican,2020
+Indiana,Republican,2020
+North Carolina,Republican,2020
+Pennsylvania,Republican,2020
+Alabama,Republican,2020
+Tennessee,Republican,2020
+Iowa,Republican,2020
+South Carolina,Republican,2020
+Ohio,Republican,2020
+Oklahoma,Republican,2020
+Oregon,Republican,2020
+South Dakota,Republican,2020
+Vermont,Republican,2020
+Maine,Republican,2020
+Rhode Island,Republican,2020
+California,Republican,2020
+Minnesota,Republican,2020
+Nevada,Republican,2020
+Wisconsin,Republican,2020
+Wyoming,Republican,2020
+Michigan,Republican,2020
+New Mexico,Republican,2020
+North Dakota,Republican,2020
+New Jersey,Republican,2020
+Arizona,Republican,2020
+Delaware,Republican,2020
+New York,Republican,2020
+Louisiana,Republican,2020
+Maryland,Republican,2020
+Arkansas,Republican,2020
+Massachusetts,Republican,2020
+Idaho,Republican,2020
+Nebraska,Republican,2020
+Washington,Republican,2020
+Utah,Republican,2020
+Montana,Republican,2020
+Texas,Republican,2020

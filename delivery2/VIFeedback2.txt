@@ -1,0 +1,19 @@
+INITIAL DATASET
+descricao semantica -> dizer o que e cada linha de cada dataset
+meter uma data sample
+
+SELECTED AND DERIVED DATA
+TUDO OK
+
+DATA ABSTRACTION
+falta dizer se os atributos sao sequencias, divergentes, ETC...
+year nao é ratio, e continuo e divergente
+
+DATA PROCESSING
+TUDO OK
+
+MAPPING
+descriçao breve de como responder as perguntas com exemplos do dataset
+
+
+

@@ -49,3 +49,11 @@ function selectAttribute(attribute) {
         button.classed("active", true);
     }
 }
+
+
+/* Attributes list */
+function startAttributesList() {
+    new Sortable(d3.select("#attributes-list").node(), {
+        animation: 150,
+    });
+}

@@ -28,6 +28,12 @@
       src="libs/topojson.min.js"
     ></script>
 
+    <script
+      language="JavaScript"
+      type="text/javascript"
+      src="libs/Sortable.min.js"
+    ></script>
+
     <!-- JS -->
     <script
       language="JavaScript"
@@ -46,12 +52,12 @@
     <link rel="stylesheet" href="style/styles.css" />
   </head>
 
-  <body onload="renderAttributes();">
-    <div class="container-xl p-4">
+  <body onload="renderAttributes(); startAttributesList();">
+    <div class="container-xxl p-4">
       <!-- Inputs -->
       <div class="row mt-3 pb-3 border-bottom">
-        <div class="col-1 d-flex align-items-center">
-          <div class="input-group" style="width: 4rem">
+        <div class="col-1 d-flex align-items-center justify-content-center">
+          <div class="input-group">
             <input
               id="year-input"
               type="text"
@@ -61,7 +67,7 @@
             />
           </div>
         </div>
-        <div class="col-5 d-flex align-items-center">
+        <div class="col-4 d-flex align-items-center justify-content-center">
           <input
             type="range"
             class="form-range"
@@ -73,7 +79,7 @@
             oninput="updateYearSlider()"
           />
         </div>
-        <div class="col d-flex align-items-center">
+        <div class="col-1 d-flex align-items-center justify-content-center">
           <div class="dropdown">
             <button
               class="btn btn-primary dropdown-toggle"
@@ -83,9 +89,15 @@
             >
               Attributes
             </button>
-            <ul class="dropdown-menu" id="attribute-menu">
-            </ul>
+            <ul class="dropdown-menu" id="attribute-menu"></ul>
           </div>
+        </div>
+        <div class="col ms-4 d-flex align-items-center justify-content-center">
+          <ul id="attributes-list" class="list-group list-group-horizontal">
+            <li class="list-group-item grabbable">Enrolment</li>
+            <li class="list-group-item grabbable">Total Revenue</li>
+            <li class="list-group-item grabbable">Total Investment</li>
+          </ul>
         </div>
       </div>
 

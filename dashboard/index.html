@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Investment in Education</title>
+
+    <!-- Import libraries. -->
+    <script
+      language="JavaScript"
+      type="text/javascript"
+      src="libs/d3.min.js"
+    ></script>
+
+    <script
+      language="JavaScript"
+      type="text/javascript"
+      src="libs/bootstrap.bundle.min.js"
+    ></script>
+
+    <script
+      language="JavaScript"
+      type="text/javascript"
+      src="libs/topojson.min.js"
+    ></script>
+
+    <!-- JS -->
+    <script
+      language="JavaScript"
+      type="text/javascript"
+      src="scripts/behavior.js"
+    ></script>
+
+    <script
+      language="JavaScript"
+      type="text/javascript"
+      src="scripts/input.js"
+    ></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style/bootstrap.min.css" />
+    <link rel="stylesheet" href="style/styles.css" />
+  </head>
+
+  <body onload="renderAttributes();">
+    <div class="container-xl p-4">
+      <!-- Inputs -->
+      <div class="row mt-3 pb-3 border-bottom">
+        <div class="col-1 d-flex align-items-center">
+          <div class="input-group" style="width: 4rem">
+            <input
+              id="year-input"
+              type="text"
+              class="form-control"
+              value="1992"
+              oninput="updateYearInput()"
+            />
+          </div>
+        </div>
+        <div class="col-5 d-flex align-items-center">
+          <input
+            type="range"
+            class="form-range"
+            min="1992"
+            max="2015"
+            step="1"
+            value="1992"
+            id="slider-input"
+            oninput="updateYearSlider()"
+          />
+        </div>
+        <div class="col d-flex align-items-center">
+          <div class="dropdown">
+            <button
+              class="btn btn-primary dropdown-toggle"
+              type="button"
+              data-bs-toggle="dropdown"
+              data-bs-auto-close="outside"
+            >
+              Attributes
+            </button>
+            <ul class="dropdown-menu" id="attribute-menu">
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Map and Line -->
+      <div class="row mt-5">
+        <div class="col">
+          <div id="map" class="p-2"></div>
+        </div>
+        <div class="col">
+          <div class="row g-4">
+            <div class="col">
+              <div id="lineChart" class="p-2">Line Chart</div>
+            </div>
+          </div>
+          <div class="row g-4 mt-2">
+            <div class="col">
+              <div id="gantChart" class="p-2">Gant Chart</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dotplot and coordinates -->
+      <div class="row mt-5">
+        <div class="col">
+          <div id="dotPlot" class="p-2">Dot Plot</div>
+        </div>
+        <div class="col">
+          <div id="coordinates" class="p-2">Parallel Coordinates</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

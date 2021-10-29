@@ -12,7 +12,7 @@ function updateYearInput() {
         year = minYear;
     }
     d3.select("#slider-input").property("value", year);
-    updateMap(year)   
+    updateMap(year)
 }
 
 function updateYearSlider() {
@@ -52,3 +52,10 @@ function selectAttribute(attribute) {
     }
 }
 
+
+/* Attributes list */
+function startAttributesList() {
+    new Sortable(d3.select("#attributes-list").node(), {
+        animation: 150,
+    });
+}

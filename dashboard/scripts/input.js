@@ -1,5 +1,6 @@
 const maxYear = 2015;
 const minYear = 1992;
+var defaultAttr = "TOTAL_REVENUE"
 var year = minYear;
 var attributes = [
   "TOTAL_REVENUE",
@@ -71,13 +72,22 @@ function updateYearInput() {
     year = minYear;
   }
   d3.select("#slider-input").property("value", year);
-  updateMap(year);
+  if (selectedAttributes[0] == null) {
+    updateMap(year, defaultAttr);
+    return
+  }
+  updateMap(year, selectAttributes[0]);
 }
 
 function updateYearSlider() {
   year = d3.select("#slider-input").property("value");
   d3.select("#year-input").property("value", year);
-  updateMap(year);
+
+  if (selectedAttributes[0] == null) {
+    updateMap(year, defaultAttr);
+    return
+  }
+  updateMap(year, selectedAttributes[0]);
 }
 
 function renderAttributes() {
@@ -115,7 +125,11 @@ function startAttributesList() {
       attribute = selectedAttributes.pop(evt.oldDraggableIndex);
       selectedAttributes.splice(evt.newDraggableIndex, 0, attribute);
       if (evt.oldDraggableIndex == 0) {
-        /* Update Map goes here */
+        if (selectedAttributes[0] == null) {
+          updateMap(year, defaultAttr);
+          return
+        }
+        updateMap(year, selectedAttributes[0]);
       }
       /* Update coordinates goes here */
     },
@@ -127,9 +141,15 @@ function removeAttribute(attribute) {
 
   d3.select(`#attribute-list-item-${attribute}`).remove();
 
+  prevAttr = selectedAttributes[0]
+
   selectedAttributes = selectedAttributes.filter((x, i) => {
     return x != attribute;
   });
+
+  if(selectedAttributes[0] != prevAttr){
+    updateMap(year, selectedAttributes[0]);
+  }
 }
 
 function addAttribute(attribute) {
@@ -142,4 +162,7 @@ function addAttribute(attribute) {
     .text(toReadable[attribute]);
 
   selectedAttributes.push(attribute);
+  if(selectedAttributes.length == 1){
+    updateMap(year, selectedAttributes[0]);
+  }
 }

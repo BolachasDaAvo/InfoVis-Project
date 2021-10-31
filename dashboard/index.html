@@ -38,7 +38,19 @@
     <script
       language="JavaScript"
       type="text/javascript"
-      src="scripts/behavior.js"
+      src="scripts/line.js"
+    ></script>
+
+    <script
+      language="JavaScript"
+      type="text/javascript"
+      src="scripts/map.js"
+    ></script>
+
+    <script
+      language="JavaScript"
+      type="text/javascript"
+      src="scripts/common.js"
     ></script>
 
     <script
@@ -52,7 +64,7 @@
     <link rel="stylesheet" href="style/styles.css" />
   </head>
 
-  <body onload="renderAttributes(); startAttributesList();">
+  <body onload="init();">
     <div class="container-xxl p-4">
       <!-- Inputs -->
       <div class="row mt-3 pb-3 border-bottom">
@@ -89,7 +101,11 @@
             >
               Attributes
             </button>
-            <ul id="attribute-menu" class="dropdown-menu overflow-auto" style="max-height: 200px;"></ul>
+            <ul
+              id="attribute-menu"
+              class="dropdown-menu overflow-auto"
+              style="max-height: 200px"
+            ></ul>
           </div>
         </div>
         <div class="col ms-4 d-flex align-items-center justify-content-start">
@@ -103,19 +119,20 @@
       <!-- Map and Line -->
       <div class="row mt-5">
         <div class="col">
-          <div id="map" class="p-2"></div>          
-            <div id="color_legend"></div>
-            <div id="tooltip"></div>
+          <div id="map" class="p-2"></div>
+          <div id="map-color-legend"></div>
+          <div id="map-tooltip"></div>
         </div>
         <div class="col">
           <div class="row g-4">
             <div class="col">
-              <div id="lineChart" class="p-2">Line Chart</div>
+              <div id="lineChart" class="p-2"></div>
+              <div id="line-tooltip"></div>
             </div>
           </div>
           <div class="row g-4 mt-2">
             <div class="col">
-              <div id="gantChart" class="p-2">Gant Chart</div>
+              <div id="gantChart" class="p-2"></div>
             </div>
           </div>
         </div>
@@ -124,10 +141,10 @@
       <!-- Dotplot and coordinates -->
       <div class="row mt-5">
         <div class="col">
-          <div id="dotPlot" class="p-2">Dot Plot</div>
+          <div id="dotPlot" class="p-2"></div>
         </div>
         <div class="col">
-          <div id="coordinates" class="p-2">Parallel Coordinates</div>
+          <div id="coordinates" class="p-2"></div>
         </div>
       </div>
     </div>

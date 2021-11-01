@@ -132,7 +132,7 @@ function lineHandleMouseMove(event, d) {
 
   d3.select("#line-tooltip")
     .html(
-      `Year: ${d.YEAR} <br> ${toReadable[attribute]}: ${round(d[attribute], 3)}`
+      `Year: ${d.YEAR} <br> ${toReadable[attribute]}: ${numberWithSpaces(round(d[attribute], 3))}`
     )
     .style("left", event.pageX + 10 + "px")
     .style("top", event.pageY + 10 + "px")

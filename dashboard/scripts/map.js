@@ -132,10 +132,10 @@ function mapHandleMouseMove(event, d) {
 
   d3.select("#map-tooltip")
     .html(
-      `State: ${d.properties.name} <br> ${toReadable[mapAttribute]}: ${round(
+      `State: ${d.properties.name} <br> ${toReadable[mapAttribute]}: ${numberWithSpaces(round(
         e,
         3
-      )}`
+      ))}`
     )
     .style("left", event.pageX + 10 + "px")
     .style("top", event.pageY + 10 + "px")
@@ -335,4 +335,9 @@ function Legend(
     );
 
   return svg.node();
+}
+
+// adapted from https://stackoverflow.com/questions/2901102/how-to-print-a-number-with-commas-as-thousands-separators-in-javascript
+function numberWithSpaces(x) {
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
 }

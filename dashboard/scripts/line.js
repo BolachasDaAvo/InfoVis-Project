@@ -102,7 +102,12 @@ function plotLine(attribute, x, y) {
     .attr("stroke-width", 3)
     .attr("stroke-linejoin", "round")
     .attr("stroke-linecap", "round")
-    .attr("d", line);
+    .attr("d", line)  
+    .attr("attribute", attribute)
+    .on("click", lineHandleMouseClick)
+    .on("mouseover", lineHandleMouseOver)
+    .on("mouseleave", lineHandleMouseLeave)
+    
 
   svg
     .append("g")
@@ -116,15 +121,24 @@ function plotLine(attribute, x, y) {
     .attr("attribute", attribute)
     .on("mouseover", lineHandleMouseOver)
     .on("mouseleave", lineHandleMouseLeave)
-    .on("mousemove", lineHandleMouseMove);
+    .on("mousemove", lineHandleMouseMove)
+    .on("click", lineHandleMouseClick);
 }
 
 function lineHandleMouseOver(event, d) {
   d3.select("#line-tooltip").style("display", "block");
+  
+  d3
+    .select(event.path[0])
+    .attr("stroke-width", 4)
 }
 
 function lineHandleMouseLeave(event, d) {
   d3.select("#line-tooltip").style("display", "none");
+  
+  d3
+    .select(event.path[0])
+    .attr("stroke-width", 3)
 }
 
 function lineHandleMouseMove(event, d) {
@@ -137,4 +151,15 @@ function lineHandleMouseMove(event, d) {
     .style("left", event.pageX + 10 + "px")
     .style("top", event.pageY + 10 + "px")
     .style("display", "block");
+}
+
+function lineHandleMouseClick(event, d) {
+
+  attribute = event.path[0].attributes.attribute.nodeValue;
+
+  selectedAttributes = [attribute, ...selectedAttributes.filter(item => item !== attribute)];
+
+  mapAttribute = selectedAttributes[0]
+  updateMapLegend()
+  updateMap()
 }

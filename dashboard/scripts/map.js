@@ -52,6 +52,9 @@ function initMap() {
 }
 
 function updateMap() {
+  
+  mapAttribute = selectedAttributes[0] != null ? selectedAttributes[0]: defaultAttribute
+
   /* Color */
   d3.select("#map")
     .selectAll("path")
@@ -71,7 +74,7 @@ function updateMap() {
       });
       return color;
     });
-
+  
   /* Attribute Values */
   d3.select("#map")
     .selectAll("path")

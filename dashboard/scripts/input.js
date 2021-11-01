@@ -57,6 +57,14 @@ function startAttributesList() {
   });
 }
 
+
+function reorderAttributesList(oldIndex, newIndex) {
+  attributesList = d3.select(`#attributes-list`).node();
+  console.log(attributesList.childNodes);
+  attributesList.insertBefore(attributesList.childNodes[oldIndex], attributesList.childNodes[newIndex]);
+}
+
+
 function reorderAttribute(evt) {
   attribute = selectedAttributes[evt.oldDraggableIndex];
   selectedAttributes.splice(evt.oldDraggableIndex, 1);
@@ -69,6 +77,7 @@ function reorderAttribute(evt) {
 
   /* Update coordinates goes here */
 }
+
 
 function removeAttribute(attribute) {
   d3.select(`#attribute-menu-item-${attribute}`).classed("active", false);
@@ -102,7 +111,7 @@ function addAttribute(attribute) {
     .append("li")
     .attr("id", `attribute-list-item-${attribute}`)
     .attr("class", "list-group-item text-light grabbable")
-		.style("background-color", attributeColors[attribute])
+    .style("background-color", attributeColors[attribute])
     .text(toReadable[attribute]);
 
   selectedAttributes.push(attribute);

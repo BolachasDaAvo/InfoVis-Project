@@ -52,8 +52,8 @@ function initMap() {
 }
 
 function updateMap() {
-  
-  mapAttribute = selectedAttributes[0] != null ? selectedAttributes[0]: defaultAttribute
+
+  mapAttribute = selectedAttributes[0] != null ? selectedAttributes[0] : defaultAttribute;
 
   /* Color */
   d3.select("#map")
@@ -67,14 +67,14 @@ function updateMap() {
         if (row.STATE === d.properties.name) {
           color = d3.interpolateBlues(
             (parseFloat(row[mapAttribute]) - map.attrMin) /
-              (map.attrMax - map.attrMin)
+            (map.attrMax - map.attrMin)
           );
           return;
         }
       });
       return color;
     });
-  
+
   /* Attribute Values */
   d3.select("#map")
     .selectAll("path")
@@ -135,8 +135,7 @@ function mapHandleMouseMove(event, d) {
 
   d3.select("#map-tooltip")
     .html(
-      `State: ${d.properties.name} <br> ${
-        toReadable[mapAttribute]
+      `State: ${d.properties.name} <br> ${toReadable[mapAttribute]
       }: ${numberWithSpaces(round(e, 3))}`
     )
     .style("left", event.pageX + 10 + "px")
@@ -260,15 +259,15 @@ function Legend(
     const thresholds = color.thresholds
       ? color.thresholds() // scaleQuantize
       : color.quantiles
-      ? color.quantiles() // scaleQuantile
-      : color.domain(); // scaleThreshold
+        ? color.quantiles() // scaleQuantile
+        : color.domain(); // scaleThreshold
 
     const thresholdFormat =
       tickFormat === undefined
         ? (d) => d
         : typeof tickFormat === "string"
-        ? d3.format(tickFormat)
-        : tickFormat;
+          ? d3.format(tickFormat)
+          : tickFormat;
 
     x = d3
       .scaleLinear()
@@ -308,7 +307,7 @@ function Legend(
       .attr("height", height - marginTop - marginBottom)
       .attr("fill", color);
 
-    tickAdjust = () => {};
+    tickAdjust = () => { };
   }
 
   svg

@@ -102,12 +102,13 @@ function plotLine(attribute, x, y) {
     .attr("stroke-width", 3)
     .attr("stroke-linejoin", "round")
     .attr("stroke-linecap", "round")
-    .attr("d", line)  
+    .attr("d", line)
     .attr("attribute", attribute)
+    .attr("id", `line-${attribute}`)
+    .style("cursor", "pointer")
     .on("click", lineHandleMouseClick)
     .on("mouseover", lineHandleMouseOver)
     .on("mouseleave", lineHandleMouseLeave)
-    
 
   svg
     .append("g")
@@ -119,29 +120,30 @@ function plotLine(attribute, x, y) {
     .attr("cy", (d) => y(d[attribute]))
     .attr("r", 5)
     .attr("attribute", attribute)
-    .on("mouseover", lineHandleMouseOver)
-    .on("mouseleave", lineHandleMouseLeave)
-    .on("mousemove", lineHandleMouseMove)
-    .on("click", lineHandleMouseClick);
+    .style("cursor", "pointer")
+    .on("mouseover", dotHandleMouseOver)
+    .on("mouseleave", dotHandleMouseLeave)
+    .on("mousemove", dotHandleMouseMove)
+    .on("click", dotHandleMouseClick);
 }
 
-function lineHandleMouseOver(event, d) {
+function dotHandleMouseOver(event, d) {
   d3.select("#line-tooltip").style("display", "block");
-  
+
   d3
-    .select(event.path[0])
+    .select(`#line-${d3.select(event.path[0]).attr("attribute")}`)
     .attr("stroke-width", 4)
 }
 
-function lineHandleMouseLeave(event, d) {
+function dotHandleMouseLeave(event, d) {
   d3.select("#line-tooltip").style("display", "none");
-  
+
   d3
-    .select(event.path[0])
+    .select(`#line-${d3.select(event.path[0]).attr("attribute")}`)
     .attr("stroke-width", 3)
 }
 
-function lineHandleMouseMove(event, d) {
+function dotHandleMouseMove(event, d) {
   attribute = event.path[0].attributes.attribute.nodeValue;
 
   d3.select("#line-tooltip")
@@ -153,13 +155,40 @@ function lineHandleMouseMove(event, d) {
     .style("display", "block");
 }
 
+function dotHandleMouseClick(event, d) {
+  if (selectedAttributes.length === 0) {
+    return;
+  }
+
+  attribute = d3.select(event.path[0]).attr("attribute");
+  oldIndex = selectedAttributes.indexOf(attribute);
+  newIndex = 0;
+
+  reorderAttribute({ oldDraggableIndex: oldIndex, newDraggableIndex: newIndex });
+  reorderAttributesList(oldIndex, newIndex);
+}
+
+function lineHandleMouseOver(event, d) {
+  d3
+    .select(event.path[0])
+    .attr("stroke-width", 4)
+}
+
+function lineHandleMouseLeave(event, d) {
+  d3
+    .select(event.path[0])
+    .attr("stroke-width", 3)
+}
+
 function lineHandleMouseClick(event, d) {
+  if (selectedAttributes.length === 0) {
+    return;
+  }
 
-  attribute = event.path[0].attributes.attribute.nodeValue;
+  attribute = d3.select(event.path[0]).attr("attribute");
+  oldIndex = selectedAttributes.indexOf(attribute);
+  newIndex = 0;
 
-  selectedAttributes = [attribute, ...selectedAttributes.filter(item => item !== attribute)];
-
-  mapAttribute = selectedAttributes[0]
-  updateMapLegend()
-  updateMap()
+  reorderAttribute({ oldDraggableIndex: oldIndex, newDraggableIndex: newIndex });
+  reorderAttributesList(oldIndex, newIndex);
 }

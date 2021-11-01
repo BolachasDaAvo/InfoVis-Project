@@ -24,7 +24,7 @@ function initMap() {
     .join("path")
     .attr("class", "state")
     .attr("d", path)
-		.style("cursor", "pointer")
+    .style("cursor", "pointer")
     .on("mouseover", mapHandleMouseOver)
     .on("mouseleave", mapHandleMouseLeave)
     .on("mousemove", mapHandleMouseMove)
@@ -131,7 +131,12 @@ function mapHandleMouseMove(event, d) {
   e = d3.select(`path[id='${d.properties.name}']`).attr(mapAttribute);
 
   d3.select("#map-tooltip")
-    .html(`State: ${d.properties.name} <br> ${toReadable[mapAttribute]}: ${e}`)
+    .html(
+      `State: ${d.properties.name} <br> ${toReadable[mapAttribute]}: ${round(
+        e,
+        3
+      )}`
+    )
     .style("left", event.pageX + 10 + "px")
     .style("top", event.pageY + 10 + "px")
     .style("opacity", 1);
@@ -139,9 +144,9 @@ function mapHandleMouseMove(event, d) {
 
 function mapHandleMouseClick(event, d) {
   selectedState = d.properties.name;
-	filterDataByState();
-	updateMap();
-	updateLine();
+  filterDataByState();
+  updateMap();
+  updateLine();
 }
 
 // Copyright 2021, Observable Inc.

@@ -113,7 +113,7 @@ function plotLine(attribute, x, y) {
     .attr("cx", (d) => x(d.YEAR))
     .attr("cy", (d) => y(d[attribute]))
     .attr("r", 5)
-		.attr("attribute", attribute)
+    .attr("attribute", attribute)
     .on("mouseover", lineHandleMouseOver)
     .on("mouseleave", lineHandleMouseLeave)
     .on("mousemove", lineHandleMouseMove);
@@ -121,7 +121,6 @@ function plotLine(attribute, x, y) {
 
 function lineHandleMouseOver(event, d) {
   d3.select("#line-tooltip").style("opacity", 1);
-
 }
 
 function lineHandleMouseLeave(event, d) {
@@ -129,10 +128,12 @@ function lineHandleMouseLeave(event, d) {
 }
 
 function lineHandleMouseMove(event, d) {
-	attribute = event.path[0].attributes.attribute.nodeValue;
+  attribute = event.path[0].attributes.attribute.nodeValue;
 
   d3.select("#line-tooltip")
-    .html(`Year: ${d.YEAR} <br> ${toReadable[attribute]}: ${d[attribute]}`)
+    .html(
+      `Year: ${d.YEAR} <br> ${toReadable[attribute]}: ${round(d[attribute], 3)}`
+    )
     .style("left", event.pageX + 10 + "px")
     .style("top", event.pageY + 10 + "px")
     .style("opacity", 1);

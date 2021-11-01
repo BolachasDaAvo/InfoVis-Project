@@ -18,7 +18,7 @@ function initLine() {
 
   /* Tooltip */
   d3.select("#line-tooltip")
-    .style("opacity", 0)
+    .style("display", "none")
     .style("background-color", "white")
     .style("border", "solid")
     .style("border-width", "1px")
@@ -120,11 +120,11 @@ function plotLine(attribute, x, y) {
 }
 
 function lineHandleMouseOver(event, d) {
-  d3.select("#line-tooltip").style("opacity", 1);
+  d3.select("#line-tooltip").style("display", "block");
 }
 
 function lineHandleMouseLeave(event, d) {
-  d3.select("#line-tooltip").style("opacity", 0);
+  d3.select("#line-tooltip").style("display", "none");
 }
 
 function lineHandleMouseMove(event, d) {
@@ -136,5 +136,5 @@ function lineHandleMouseMove(event, d) {
     )
     .style("left", event.pageX + 10 + "px")
     .style("top", event.pageY + 10 + "px")
-    .style("opacity", 1);
+    .style("display", "block");
 }

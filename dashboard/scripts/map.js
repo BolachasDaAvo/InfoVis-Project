@@ -35,7 +35,7 @@ function initMap() {
 
   /* Tooltip */
   d3.select("#map-tooltip")
-    .style("opacity", 0)
+    .style("display", "none")
     .style("background-color", "white")
     .style("border", "solid")
     .style("border-width", "1px")
@@ -120,11 +120,11 @@ function zoomed({ transform }) {
 }
 
 function mapHandleMouseOver(event, d) {
-  d3.select("#map-tooltip").style("opacity", 1);
+  d3.select("#map-tooltip").style("display", "block");
 }
 
 function mapHandleMouseLeave(event, d) {
-  d3.select("#map-tooltip").style("opacity", 0);
+  d3.select("#map-tooltip").style("display", "none");
 }
 
 function mapHandleMouseMove(event, d) {
@@ -132,14 +132,13 @@ function mapHandleMouseMove(event, d) {
 
   d3.select("#map-tooltip")
     .html(
-      `State: ${d.properties.name} <br> ${toReadable[mapAttribute]}: ${numberWithSpaces(round(
-        e,
-        3
-      ))}`
+      `State: ${d.properties.name} <br> ${
+        toReadable[mapAttribute]
+      }: ${numberWithSpaces(round(e, 3))}`
     )
     .style("left", event.pageX + 10 + "px")
     .style("top", event.pageY + 10 + "px")
-    .style("opacity", 1);
+    .style("display", "block");
 }
 
 function mapHandleMouseClick(event, d) {

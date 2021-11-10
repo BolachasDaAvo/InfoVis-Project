@@ -152,9 +152,8 @@ function mapHandleMouseClick(event, d) {
   {
     selectedStates[selectedStates.length] = d.properties.name
   }
-  else
-  {
-    selectedStates.splice(index, 1)
+  else if(selectedStates.length > 1){
+      selectedStates.splice(index, 1)
   }
 
   console.log(selectedStates)

@@ -98,7 +98,7 @@ const toReadable = {
 };
 
 var selectedYear = minYear;
-var selectedState = "Alabama";
+var selectedStates = ["Alabama"];
 var selectedAttributes = [];
 var attributeColors = {};
 var mapAttribute = defaultAttribute;
@@ -133,7 +133,7 @@ function filterDataByYear() {
 
 function filterDataByState() {
   stateData = data.filter((row) => {
-    return row["STATE"] == selectedState;
+    return selectedStates.find(element => element === row["STATE"]);
   });
 }
 

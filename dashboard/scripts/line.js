@@ -77,17 +77,26 @@ function updateLine() {
 
   svg.append("g").call(yAxis);
 
-  if (selectedAttributes.length == 0) {
-    plotLine(defaultAttribute, x, y);
-  } else {
-    selectedAttributes.forEach((attribute) => {
-      plotLine(attribute, x, y);
-    });
-  }
+  selectedStates.forEach(element => {
+    if (selectedAttributes.length == 0) {
+      plotLine(defaultAttribute, element, x, y);
+    }
+    else if (selectedStates.length > 1) {
+      plotLine(selectedAttributes[0], element, x, y);
+    }
+    else {
+      selectedAttributes.forEach((attribute) => {
+        plotLine(attribute, element, x, y);
+      });
+    }    
+  });
+
 }
 
-function plotLine(attribute, x, y) {
+function plotLine(attribute, state, x, y) {
   const svg = d3.select("#lineChart").select("svg");
+
+  lineData = stateData.filter(d => d.STATE === state)
 
   line = d3
     .line()
@@ -96,7 +105,7 @@ function plotLine(attribute, x, y) {
 
   svg
     .append("path")
-    .datum(stateData)
+    .datum(lineData)
     .attr("fill", "none")
     .attr("stroke", attributeColors[attribute] || "steelblue")
     .attr("stroke-width", 3)
@@ -114,7 +123,7 @@ function plotLine(attribute, x, y) {
     .append("g")
     .attr("fill", attributeColors[attribute] || "steelblue")
     .selectAll("circle")
-    .data(stateData)
+    .data(lineData)
     .join("circle")
     .attr("cx", (d) => x(d.YEAR))
     .attr("cy", (d) => y(d[attribute]))
@@ -137,6 +146,7 @@ function dotHandleMouseOver(event, d) {
 
 function dotHandleMouseLeave(event, d) {
   d3.select("#line-tooltip").style("display", "none");
+
 
   d3
     .select(`#line-${d3.select(event.path[0]).attr("attribute")}`)

@@ -58,11 +58,14 @@ function updateMap() {
   /* Color */
   d3.select("#map")
     .selectAll("path")
-    .attr("fill", (d) => {
-      var color = "grey";
-      if (d.properties.name === selectedState) {
+    .attr("stroke", (d) => {
+      if (selectedStates.find(element => element === d.properties.name)) {
         return "red";
       }
+    })
+    .attr("fill", (d) => {
+      var color = "grey";
+      
       yearData.forEach((row) => {
         if (row.STATE === d.properties.name) {
           color = d3.interpolateBlues(
@@ -144,7 +147,18 @@ function mapHandleMouseMove(event, d) {
 }
 
 function mapHandleMouseClick(event, d) {
-  selectedState = d.properties.name;
+  index = selectedStates.findIndex(element => element === d.properties.name)
+  if(index == -1)
+  {
+    selectedStates[selectedStates.length] = d.properties.name
+  }
+  else
+  {
+    selectedStates.splice(index, 1)
+  }
+
+  console.log(selectedStates)
+
   filterDataByState();
   updateMap();
   updateLine();

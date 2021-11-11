@@ -41,8 +41,7 @@ function initMap() {
     .style("border-width", "1px")
     .style("border-radius", "5px")
     .style("padding", "10px")
-    .style("position", "absolute")
-    .attr("pointer-events", "none");
+    .style("position", "absolute"); //TODO: fix mouse over tooltip
 
   /* Legend */
   d3.select("#map-color-legend").append("svg");
@@ -53,16 +52,11 @@ function initMap() {
 
 function updateMap() {
 
-  mapAttribute = selectedAttributes[0] != null ? selectedAttributes[0] : defaultAttribute;
-
   /* Color */
   d3.select("#map")
     .selectAll("path")
     .attr("fill", (d) => {
       var color = "grey";
-      if (d.properties.name === selectedState) {
-        return "red";
-      }
       yearData.forEach((row) => {
         if (row.STATE === d.properties.name) {
           color = d3.interpolateBlues(
@@ -73,7 +67,16 @@ function updateMap() {
         }
       });
       return color;
-    });
+    })
+    .attr("stroke", (d) => {
+      if (selectedStates.includes(d.properties.name)) {
+        return "red";
+      }
+      else {
+        return "white";
+      }
+    })
+    .attr("stroke-width", 2); // TODO: fix stroke colour/width
 
   /* Attribute Values */
   d3.select("#map")
@@ -144,7 +147,19 @@ function mapHandleMouseMove(event, d) {
 }
 
 function mapHandleMouseClick(event, d) {
-  selectedState = d.properties.name;
+  if (selectedStates.includes(d.properties.name)) {
+    if (selectedStates.length <= 1) {
+      pushToast("Choropleth map", "Must have at least one state selected")
+      return;
+    }
+    selectedStates.splice(selectedStates.indexOf(d.properties.name), 1);
+  } else {
+    if (selectedStates.length >= 5) {
+      pushToast("Choropleth map", "Can only have up to 5 states selected")
+      return;
+    }
+    selectedStates.push(d.properties.name);
+  }
   filterDataByState();
   updateMap();
   updateLine();

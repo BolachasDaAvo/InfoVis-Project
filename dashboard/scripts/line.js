@@ -31,6 +31,7 @@ function initLine() {
 }
 
 function updateLine() {
+
   d3.select("#lineChart").select("svg").remove();
 
   const svg = d3
@@ -51,13 +52,21 @@ function updateLine() {
 
   svg.append("g").call(xAxis);
 
-  var yDomain;
-  if (selectedAttributes.length == 0) {
-    yDomain = d3.extent(stateData, (d) => parseFloat(d[defaultAttribute]));
-  } else {
-    yDomain = [Number.MAX_SAFE_INTEGER, Number.MIN_SAFE_INTEGER];
+  var yDomain = [Number.MAX_SAFE_INTEGER, Number.MIN_SAFE_INTEGER];
+  if (selectedStates.length === 1) {
+    /* plot all attributes */
     selectedAttributes.forEach((attribute) => {
-      var domain = d3.extent(stateData, (d) => parseFloat(d[attribute]));
+      var domain = d3.extent(stateData[selectedStates[0]], (d) => parseFloat(d[attribute]));
+      yDomain = [
+        domain[0] < yDomain[0] ? domain[0] : yDomain[0],
+        domain[1] > yDomain[1] ? domain[1] : yDomain[1],
+      ];
+    });
+  }
+  else {
+    /* plot all states */
+    selectedStates.forEach((state) => {
+      var domain = d3.extent(stateData[state], (d) => parseFloat(d[mapAttribute]));
       yDomain = [
         domain[0] < yDomain[0] ? domain[0] : yDomain[0],
         domain[1] > yDomain[1] ? domain[1] : yDomain[1],
@@ -77,16 +86,18 @@ function updateLine() {
 
   svg.append("g").call(yAxis);
 
-  if (selectedAttributes.length == 0) {
-    plotLine(defaultAttribute, x, y);
-  } else {
+  if (selectedStates.length === 1) {
     selectedAttributes.forEach((attribute) => {
-      plotLine(attribute, x, y);
+      plotLine(selectedStates[0], attribute, x, y);
+    });
+  } else {
+    selectedStates.forEach((state) => {
+      plotLine(state, mapAttribute, x, y);
     });
   }
 }
 
-function plotLine(attribute, x, y) {
+function plotLine(state, attribute, x, y) {
   const svg = d3.select("#lineChart").select("svg");
 
   line = d3
@@ -96,9 +107,9 @@ function plotLine(attribute, x, y) {
 
   svg
     .append("path")
-    .datum(stateData)
+    .datum(stateData[state])
     .attr("fill", "none")
-    .attr("stroke", attributeColors[attribute] || "steelblue")
+    .attr("stroke", attributeColors[attribute])
     .attr("stroke-width", 3)
     .attr("stroke-linejoin", "round")
     .attr("stroke-linecap", "round")
@@ -112,9 +123,9 @@ function plotLine(attribute, x, y) {
 
   svg
     .append("g")
-    .attr("fill", attributeColors[attribute] || "steelblue")
+    .attr("fill", attributeColors[attribute])
     .selectAll("circle")
-    .data(stateData)
+    .data(stateData[state])
     .join("circle")
     .attr("cx", (d) => x(d.YEAR))
     .attr("cy", (d) => y(d[attribute]))

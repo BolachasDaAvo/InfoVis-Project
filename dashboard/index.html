@@ -65,10 +65,20 @@
   </head>
 
   <body onload="init();">
+    <!-- Toasts -->
+    <div aria-live="polite" aria-atomic="true" class="position-relative">
+      <div
+        id="toast-list"
+        class="toast-container position-absolute top-0 end-0 p-3"
+        style="z-index: 1;"
+      ></div>
+    </div>
+
+    <!-- Content -->
     <div class="container-xxl p-4">
       <!-- Inputs -->
       <div class="row mt-3 pb-3 border-bottom">
-        <div class="col-1 d-flex align-items-center justify-content-center">
+        <div class="col-1 d-flex align-items-center justify-content-center m-1">
           <div class="input-group">
             <input
               id="year-input"
@@ -79,7 +89,7 @@
             />
           </div>
         </div>
-        <div class="col-4 d-flex align-items-center justify-content-center">
+        <div class="col-4 d-flex align-items-center justify-content-center m-1">
           <input
             type="range"
             class="form-range"
@@ -91,7 +101,23 @@
             oninput="updateYearSlider()"
           />
         </div>
-        <div class="col-1 d-flex align-items-center justify-content-center">
+        <div class="col-1 d-flex align-items-center justify-content-center m-1">
+          <div class="dropdown">
+            <button
+              class="btn btn-primary dropdown-toggle"
+              type="button"
+              data-bs-toggle="dropdown"
+            >
+              Analysis
+            </button>
+            <ul
+              id="analysis-menu"
+              class="dropdown-menu overflow-auto"
+              style="max-height: 200px"
+            ></ul>
+          </div>
+        </div>
+        <div class="col-1 d-flex align-items-center justify-content-center m-1">
           <div class="dropdown">
             <button
               class="btn btn-primary dropdown-toggle"
@@ -108,7 +134,7 @@
             ></ul>
           </div>
         </div>
-        <div class="col ms-4 d-flex align-items-center justify-content-start">
+        <div class="col d-flex align-items-center justify-content-start m-1">
           <ul
             id="attributes-list"
             class="list-group list-group-horizontal"

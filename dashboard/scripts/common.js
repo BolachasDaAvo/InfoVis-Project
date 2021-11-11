@@ -216,7 +216,7 @@ function pushToast(header, message) {
         </div>
     `);
   newToast.transition().duration(250).style("opacity", 1);
-  //setTimeout(fadeOutToast, 5 * 1000, toastId)
+  setTimeout(fadeOutToast, 5 * 1000, toastId)
   toastCounter += 1;
 }
 

@@ -149,6 +149,7 @@ function dotHandleMouseOver(event, d) {
 function dotHandleMouseLeave(event, d) {
   d3.select("#line-tooltip").style("display", "none");
 
+
   d3
     .select(`#line-${d3.select(event.path[0]).attr("attribute")}`)
     .attr("stroke-width", 3)

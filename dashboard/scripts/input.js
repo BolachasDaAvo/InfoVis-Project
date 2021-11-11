@@ -68,6 +68,9 @@ function selectMapAttribute(attribute) {
     return;
   }
 
+  console.log("select", attribute);
+  console.log("select", mapAttribute);
+
   /* Highlight */
   attributesListHighlightAttribute(mapAttribute);
   attributesListHighlightAttribute(attribute);
@@ -131,6 +134,7 @@ function changeAttributeTypes(from, to) {
   selectedAttributes.forEach((attribute) => {
     let newAttribute = attribute.replace(analysisSuffix[from], analysisSuffix[to])
     if (attributesList.includes(newAttribute)) {
+
       /* Update UI list */
       attributesListChangeAttribute(attribute, newAttribute);
 
@@ -143,6 +147,7 @@ function changeAttributeTypes(from, to) {
       /* Update colors */
       colorChangeAttribute(attribute, newAttribute);
     } else {
+
       /* Update UI list */
       attributesListRemoveAttribute(attribute);
 
@@ -150,8 +155,18 @@ function changeAttributeTypes(from, to) {
       freeColor(attribute);
     }
   })
+
+  /* map attribute */
+  // TODO: fix edge case where list can be empty when swapping to PC
+  if (!newAttributes.includes(mapAttribute.replace(analysisSuffix[from], analysisSuffix[to]))) {
+    mapAttribute = newAttributes[0];
+    attributesListHighlightAttribute(mapAttribute);
+  }
+  else {
+    mapAttribute = mapAttribute.replace(analysisSuffix[from], analysisSuffix[to])
+    console.log(mapAttribute);
+  }
   selectedAttributes = newAttributes;
-  mapAttribute = selectedAttributes[0];
 }
 
 /* Attributes list */
@@ -252,7 +267,11 @@ function attributesListRemoveAttribute(attribute) {
 }
 
 function attributesListChangeAttribute(from, to) {
-  d3.select(`#attribute-list-item-${from}`).attr("id", `attribute-list-item-${to}`);
+  d3.select(`#attribute-list-item-${from}`)
+    .attr("id", `attribute-list-item-${to}`)
+    .on("click", () => {
+      selectMapAttribute(to);
+    });
 }
 
 function attributesListHighlightAttribute(attribute) {

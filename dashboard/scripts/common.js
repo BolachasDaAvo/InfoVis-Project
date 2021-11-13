@@ -1,9 +1,12 @@
+//TODO: when hovering state reduce opacity of the other states on the other idioms
+
 const data_source = "data/data.csv";
 const map_source = "data/states.json";
 const maxYear = 2015;
 const minYear = 1992;
 const defaultAnalysis = "GROSS"
 const defaultAttribute = "TOTAL_REVENUE_GROSS";
+const defaultState = "Florida"
 const analysisList = [
   "GROSS",
   "PER_CAPITA",
@@ -18,15 +21,6 @@ const attributesList = [
   "TOTAL_REVENUE_GROSS",
   "TOTAL_REVENUE_PC",
   "TOTAL_REVENUE_PCT",
-  "FEDERAL_REVENUE_GROSS",
-  "FEDERAL_REVENUE_PC",
-  "FEDERAL_REVENUE_PCT",
-  "STATE_REVENUE_GROSS",
-  "STATE_REVENUE_PC",
-  "STATE_REVENUE_PCT",
-  "LOCAL_REVENUE_GROSS",
-  "LOCAL_REVENUE_PC",
-  "LOCAL_REVENUE_PCT",
   "TOTAL_EXPENDITURE_GROSS",
   "TOTAL_EXPENDITURE_PC",
   "TOTAL_EXPENDITURE_PCT",
@@ -44,18 +38,6 @@ const attributesList = [
   "ENROLMENT_PCT",
   "AVERAGE_SCORE_GROSS",
   "AVERAGE_SCORE_PCT",
-  "AM_AVERAGE_SCORE_GROSS",
-  "AM_AVERAGE_SCORE_PCT",
-  "AS_AVERAGE_SCORE_GROSS",
-  "AS_AVERAGE_SCORE_PCT",
-  "HI_AVERAGE_SCORE_GROSS",
-  "HI_AVERAGE_SCORE_PCT",
-  "BL_AVERAGE_SCORE_GROSS",
-  "BL_AVERAGE_SCORE_PCT",
-  "WH_AVERAGE_SCORE_GROSS",
-  "WH_AVERAGE_SCORE_PCT",
-  "TR_AVERAGE_SCORE_GROSS",
-  "TR_AVERAGE_SCORE_PCT",
 ];
 const toReadable = {
   GROSS: "Gross",
@@ -79,8 +61,8 @@ const toReadable = {
   INSTRUCTION_EXPENDITURE_GROSS: "Instruction Expenditure",
   INSTRUCTION_EXPENDITURE_PC: "Instruction Expenditure",
   INSTRUCTION_EXPENDITURE_PCT: "Instruction Expenditure",
-  SUPPORT_SERVICES_EXPENDITURE_GROSS: "Suport Services Expenditure",
-  SUPPORT_SERVICES_EXPENDITURE_PC: "Suport Services Expenditure",
+  SUPPORT_SERVICES_EXPENDITURE_GROSS: "Support Services Expenditure",
+  SUPPORT_SERVICES_EXPENDITURE_PC: "Support Services Expenditure",
   SUPPORT_SERVICES_EXPENDITURE_PCT: "Support Services Expenditure",
   CAPITAL_OUTLAY_EXPENDITURE_GROSS: "Capital Outlay Expenditure",
   CAPITAL_OUTLAY_EXPENDITURE_PC: "Capital Outlay Expenditure",
@@ -103,13 +85,88 @@ const toReadable = {
   TR_AVERAGE_SCORE_GROSS: "Multi-Race NAEP Score",
   TR_AVERAGE_SCORE_PCT: "Multi-Race NAEP Score",
 };
-var availableColors = ["#27aeef", "#87bc45", "#ef9b20", "#b33dc6"];
+const toAbbreviated = {
+  TOTAL_REVENUE_GROSS: "Revenue",
+  TOTAL_REVENUE_PC: "Revenue",
+  TOTAL_REVENUE_PCT: "Revenue",
+  TOTAL_EXPENDITURE_GROSS: "Expenditure",
+  TOTAL_EXPENDITURE_PC: "Expenditure",
+  TOTAL_EXPENDITURE_PCT: "Expenditure",
+  INSTRUCTION_EXPENDITURE_GROSS: "Instruction",
+  INSTRUCTION_EXPENDITURE_PC: "Instruction",
+  INSTRUCTION_EXPENDITURE_PCT: "Instruction",
+  SUPPORT_SERVICES_EXPENDITURE_GROSS: "Support Services",
+  SUPPORT_SERVICES_EXPENDITURE_PC: "Support Services",
+  SUPPORT_SERVICES_EXPENDITURE_PCT: "Support Services",
+  CAPITAL_OUTLAY_EXPENDITURE_GROSS: "Capital Outlay",
+  CAPITAL_OUTLAY_EXPENDITURE_PC: "Capital Outlay",
+  CAPITAL_OUTLAY_EXPENDITURE_PCT: "Capital Outlay",
+  ENROLMENT_GROSS: "Enrolment",
+  ENROLMENT_PC: "Enrolment",
+  ENROLMENT_PCT: "Enrolment",
+  AVERAGE_SCORE_GROSS: "NAEP Score",
+  AVERAGE_SCORE_PCT: "NAEP Score",
+}
+const stateCodes = {
+  "Alabama": "AL",
+  "Nebraska": "NE",
+  "Alaska": "AK",
+  "Nevada": "NV",
+  "Arizona": "AZ",
+  "New Hampshire": "NH",
+  "Arkansas": "AR",
+  "New Jersey": "NJ",
+  "California": "CA",
+  "New Mexico": "NM",
+  "Colorado": "CO",
+  "New York": "NY",
+  "Connecticut": "CT",
+  "North Carolina": "NC",
+  "Delaware": "DE",
+  "North Dakota": "ND",
+  "Ohio": "OH",
+  "Florida": "FL",
+  "Oklahoma": "OK",
+  "Georgia": "GA",
+  "Oregon": "OR",
+  "Pennsylvania": "PA",
+  "Idaho": "ID",
+  "Illinois": "IL",
+  "Rhode Island": "RI",
+  "Indiana": "IN",
+  "South Carolina": "SC",
+  "Iowa": "IA",
+  "South Dakota": "SD",
+  "Kansas": "KS",
+  "Tennessee": "TN",
+  "Kentucky": "KY",
+  "Texas": "TX",
+  "Louisiana": "LA",
+  "Utah": "UT",
+  "Maine": "ME",
+  "Vermont": "VT",
+  "Maryland": "MD",
+  "Virginia": "VA",
+  "Massachusetts": "MA",
+  "Michigan": "MI",
+  "Washington": "WA",
+  "Minnesota": "MN",
+  "West Virginia": "WV",
+  "Mississippi": "MS",
+  "Wisconsin": "WI",
+  "Missouri": "MO",
+  "Wyoming": "WY",
+  "Montana": "MT"
+}
+var availableAttributeColors = ["#8c564b", "#17becf", "#7f7f7f", "#9467bd"];
+var availableStateColors = ["#ff7f0e", "#d62728", "#e377c2", "#bcbd22"]
 
 var selectedYear = minYear;
-var selectedStates = ["Alabama"];
+var selectedStates = [defaultState];
 var selectedAnalysis = defaultAnalysis;
 var selectedAttributes = [defaultAttribute];
-var attributeColors = {}; attributeColors[defaultAttribute] = "#e60049";
+var attributeColors = {}; attributeColors[defaultAttribute] = "#1f77b4";
+var stateColors = {}; stateColors[defaultState] = "#2ca02c";
 var mapAttribute = defaultAttribute;
 
 var data;
@@ -137,21 +194,36 @@ function init() {
     /* Line */
     initLine();
 
+    /* Coordinates */
+    initCoordinates();
+
     updateIdioms();
   });
 }
 
 /* Colors */
-function assignColor(attribute) {
-  let color = availableColors.pop();
+function assignAttributeColor(attribute) {
+  let color = availableAttributeColors.pop();
   attributeColors[attribute] = color;
   return color;
 }
 
-function freeColor(attribute) {
+function freeAttributeColor(attribute) {
   let color = attributeColors[attribute];
-  availableColors.push(color);
+  availableAttributeColors.push(color);
   delete attributeColors[attribute];
+}
+
+function assignStateColor(state) {
+  let color = availableStateColors.pop();
+  stateColors[state] = color;
+  return color;
+}
+
+function freeStateColor(state) {
+  let color = stateColors[state];
+  availableStateColors.push(color);
+  delete stateColors[state];
 }
 
 function colorChangeAttribute(from, to) {
@@ -186,10 +258,23 @@ function updateIdioms() {
   updateMapLegend();
   updateMap();
   updateLine();
+  updateCoordinates();
 }
 
 function round(number, decimalPlaces) {
   return Math.round(number * 10 ** decimalPlaces) / 10 ** decimalPlaces;
+}
+
+function formatNum(number, precision = 3) {
+  if (number === null) { return null; }
+  if (number === 0) { return '0'; }
+  precision = (!precision || precision < 0) ? 0 : precision;
+  let b = (number).toPrecision(2).split("e"),
+    k = b.length === 1 ? 0 : Math.floor(Math.min(b[1].slice(1), 14) / 3),
+    c = k < 1 ? number.toFixed(0 + precision) : (number / Math.pow(10, k * 3)).toFixed(1 + precision),
+    d = c < 0 ? c : Math.abs(c),
+    e = d + ['', 'K', 'M', 'B', 'T'][k];
+  return e;
 }
 
 var toastCounter = 0;

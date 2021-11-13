@@ -25,6 +25,8 @@ function initMap() {
     .attr("class", "state")
     .attr("d", path)
     .style("cursor", "pointer")
+    .style("stroke", "white")
+    .style("stroke-width", 1)
     .on("mouseover", mapHandleMouseOver)
     .on("mouseleave", mapHandleMouseLeave)
     .on("mousemove", mapHandleMouseMove)
@@ -41,10 +43,23 @@ function initMap() {
     .style("border-width", "1px")
     .style("border-radius", "5px")
     .style("padding", "10px")
-    .style("position", "absolute"); //TODO: fix mouse over tooltip
+    .style("pointer-events", "none")
+    .style("position", "absolute");
 
   /* Legend */
   d3.select("#map-color-legend").append("svg");
+
+  /* Default state */
+  let element = d3.select(`path[id="${defaultState}"]`)
+  element.node().parentNode.appendChild(element.node())
+  element.style("stroke", stateColors[defaultState]).style("stroke-width", 3)
+  d3.select("#states-list")
+    .append("li")
+    .attr("id", `states-list-item-${defaultState}`)
+    .attr("class", "list-group-item text-light")
+    .style("background-color", stateColors[defaultState])
+    .style("cursor", "pointer")
+    .text(defaultState);
 
   updateMapLegend();
   updateMap();
@@ -68,15 +83,13 @@ function updateMap() {
       });
       return color;
     })
-    .attr("stroke", (d) => {
+    .style("stroke", (d) => {
       if (selectedStates.includes(d.properties.name)) {
-        return "red";
-      }
-      else {
+        return stateColors[d.properties.name];
+      } else {
         return "white";
       }
-    })
-    .attr("stroke-width", 2); // TODO: fix stroke colour/width
+    });
 
   /* Attribute Values */
   d3.select("#map")
@@ -126,10 +139,34 @@ function zoomed({ transform }) {
 }
 
 function mapHandleMouseOver(event, d) {
+  d3.select(event.srcElement).node().parentNode.appendChild(d3.select(event.srcElement).node());
+  d3.select(event.srcElement)
+    .style("opacity", 1)
+    .style("stroke", () => {
+      if (selectedStates.includes(d.properties.name)) {
+        return stateColors[d.properties.name];
+      } else {
+        return "black";
+      }
+    });
   d3.select("#map-tooltip").style("display", "block");
 }
 
 function mapHandleMouseLeave(event, d) {
+  selectedStates.forEach((state) => {
+    let element = d3.select(`path[id="${state}"]`)
+    element.node().parentNode.appendChild(element.node());
+    element.style("stroke", stateColors[state]);
+  })
+  d3.selectAll(".state")
+    .style("opacity", 1)
+    .style("stroke", (d) => {
+      if (selectedStates.includes(d.properties.name)) {
+        return stateColors[d.properties.name];
+      } else {
+        return "white";
+      }
+    });
   d3.select("#map-tooltip").style("display", "none");
 }
 
@@ -148,21 +185,73 @@ function mapHandleMouseMove(event, d) {
 
 function mapHandleMouseClick(event, d) {
   if (selectedStates.includes(d.properties.name)) {
-    if (selectedStates.length <= 1) {
-      pushToast("Choropleth map", "Must have at least one state selected")
-      return;
-    }
-    selectedStates.splice(selectedStates.indexOf(d.properties.name), 1);
+    removeState(d.properties.name);
   } else {
-    if (selectedStates.length >= 5) {
-      pushToast("Choropleth map", "Can only have up to 5 states selected")
-      return;
-    }
-    selectedStates.push(d.properties.name);
+    addState(d.properties.name);
   }
+}
+
+function addState(state) {
+  if (selectedStates.length >= 5) {
+    pushToast("Choropleth map", "Can only have up to 5 states selected")
+    return;
+  }
+
+  /* Add to UI list */
+  let color = assignStateColor(state);
+  d3.select("#states-list")
+    .append("li")
+    .attr("id", `states-list-item-${state}`)
+    .attr("class", "list-group-item text-light")
+    .style("background-color", color)
+    .style("cursor", "pointer")
+    .text(state);
+
+  /* Add highlight */
+  let element = d3.select(`path[id="${state}"]`);
+  element.node().parentNode.appendChild(element.node());
+  element
+    .style("stroke", color)
+    .style("stroke-width", 3);
+
+  /* Add to internal list */
+  selectedStates.push(state);
+
+  /* Update idioms */
   filterDataByState();
-  updateMap();
   updateLine();
+  updateCoordinates();
+}
+
+function removeState(state) {
+  if (selectedStates.length <= 1) {
+    pushToast("Choropleth map", "Must have at least one state selected")
+    return;
+  }
+
+  /* Remove from UI list */
+  d3.select(`li[id="states-list-item-${state}"]`).remove();
+  freeStateColor(state);
+
+  /* Remove highlight */
+  d3.select(`path[id="${state}"]`)
+    .style("stroke", "white")
+    .style("stroke-width", 1);
+
+  /* Remove from internal list */
+  selectedStates.splice(selectedStates.indexOf(state), 1);
+
+  /* Recolor states */
+  selectedStates.forEach((state) => {
+    let element = d3.select(`path[id="${state}"]`)
+    element.node().parentNode.appendChild(element.node());
+    element.style("stroke", stateColors[state]);
+  });
+
+  /* Update idioms */
+  filterDataByState();
+  updateLine();
+  updateCoordinates();
 }
 
 // Copyright 2021, Observable Inc.

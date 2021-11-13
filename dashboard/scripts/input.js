@@ -68,9 +68,6 @@ function selectMapAttribute(attribute) {
     return;
   }
 
-  console.log("select", attribute);
-  console.log("select", mapAttribute);
-
   /* Highlight */
   attributesListHighlightAttribute(mapAttribute);
   attributesListHighlightAttribute(attribute);
@@ -152,7 +149,7 @@ function changeAttributeTypes(from, to) {
       attributesListRemoveAttribute(attribute);
 
       /* Update colors */
-      freeColor(attribute);
+      freeAttributeColor(attribute);
     }
   })
 
@@ -211,7 +208,7 @@ function addAttribute(attribute) {
   d3.select(`#attribute-menu-item-${attribute}`).classed("active", true);
 
   /* Add to UI list */
-  let color = assignColor(attribute);
+  let color = assignAttributeColor(attribute);
   attributesListAddAttribute(attribute, color);
 
   /* Add to internal list */
@@ -236,7 +233,7 @@ function removeAttribute(attribute) {
 
   /* Remove from UI list */
   attributesListRemoveAttribute(attribute)
-  freeColor(attribute);
+  freeAttributeColor(attribute);
 
   /* Remove from internal list */
   selectedAttributes.splice(selectedAttributes.indexOf(attribute), 1);

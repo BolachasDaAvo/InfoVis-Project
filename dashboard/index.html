@@ -50,6 +50,12 @@
     <script
       language="JavaScript"
       type="text/javascript"
+      src="scripts/coordinates.js"
+    ></script>
+
+    <script
+      language="JavaScript"
+      type="text/javascript"
       src="scripts/common.js"
     ></script>
 
@@ -70,26 +76,27 @@
       <div
         id="toast-list"
         class="toast-container position-absolute top-0 end-0 p-3"
-        style="z-index: 1;"
+        style="z-index: 1"
       ></div>
     </div>
 
     <!-- Content -->
     <div class="container-xxl p-4">
       <!-- Inputs -->
-      <div class="row mt-3 pb-3 border-bottom">
-        <div class="col-1 d-flex align-items-center justify-content-center m-1">
-          <div class="input-group">
+      <div class="row mt-3">
+        <div class="col-1 d-flex align-items-center justify-content-start">
+          <div class="input-group" style="width: 70px">
             <input
               id="year-input"
               type="text"
               class="form-control"
               value="1992"
               oninput="updateYearInput()"
+              style="text-align: center"
             />
           </div>
         </div>
-        <div class="col-4 d-flex align-items-center justify-content-center m-1">
+        <div class="col-6 d-flex align-items-center justify-content-start">
           <input
             type="range"
             class="form-range"
@@ -101,7 +108,7 @@
             oninput="updateYearSlider()"
           />
         </div>
-        <div class="col-1 d-flex align-items-center justify-content-center m-1">
+        <div class="col-3 d-flex align-items-center justify-content-start">
           <div class="dropdown">
             <button
               class="btn btn-primary dropdown-toggle"
@@ -116,9 +123,7 @@
               style="max-height: 200px"
             ></ul>
           </div>
-        </div>
-        <div class="col-1 d-flex align-items-center justify-content-center m-1">
-          <div class="dropdown">
+          <div class="dropdown ms-3">
             <button
               class="btn btn-primary dropdown-toggle"
               type="button"
@@ -134,11 +139,24 @@
             ></ul>
           </div>
         </div>
-        <div class="col d-flex align-items-center justify-content-start m-1">
+      </div>
+      <div class="row mt-3">
+        <div class="col-2 d-flex align-items-center justify-content-start">
+          <div class="me-3">Selected Attributes:</div>
+        </div>
+        <div class="col d-flex align-items-center justify-content-start">
           <ul
             id="attributes-list"
             class="list-group list-group-horizontal"
           ></ul>
+        </div>
+      </div>
+      <div class="row mt-3 pb-3 border-bottom">
+        <div class="col-2 d-flex align-items-center justify-content-start">
+          Selected States:
+        </div>
+        <div class="col d-flex align-items-center justify-content-start">
+          <ul id="states-list" class="list-group list-group-horizontal"></ul>
         </div>
       </div>
 
@@ -168,15 +186,11 @@
       <div class="row mt-5">
         <div class="col">
           <div id="dotPlot" class="p-2">
-            <img src="dotplot.png", width="600">
+            <img src="dotplot.png" , width="600" />
           </div>
-
         </div>
         <div class="col">
-          <div id="coordinates" class="p-2">
-            <img src="parallel.png", width="600">
-
-          </div>
+          <div id="coordinates" class="p-2"></div>
         </div>
       </div>
     </div>

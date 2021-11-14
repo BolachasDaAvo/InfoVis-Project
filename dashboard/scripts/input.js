@@ -10,6 +10,7 @@ function updateYearInput() {
 
   filterDataByYear();
   updateMap();
+  updateDot();
 }
 
 function updateYearSlider() {
@@ -18,6 +19,7 @@ function updateYearSlider() {
 
   filterDataByYear();
   updateMap();
+  updateDot();
 }
 
 /* Attributes */

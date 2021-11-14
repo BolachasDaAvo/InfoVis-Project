@@ -22,5 +22,8 @@
 
 .highlighted {
   border-bottom-width: 4px;
-  border-bottom-color: black;
+  border-bottom-color: red;
+}
+
+html {
 }

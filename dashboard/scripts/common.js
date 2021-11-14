@@ -105,6 +105,14 @@ const toAbbreviated = {
   AVERAGE_SCORE_GROSS: "NAEP Score",
   AVERAGE_SCORE_PCT: "NAEP Score",
 }
+const stateList = ["Alabama", "Arizona", "Arkansas", "California", "Colorado", "Connecticut",
+  "Delaware", "Florida", "Georgia", "Idaho", "Illinois", "Indiana", "Iowa",
+  "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts",
+  "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska",
+  "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York",
+  "North Carolina", "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania",
+  "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah",
+  "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming"]
 const stateCodes = {
   "Alabama": "AL",
   "Nebraska": "NE",
@@ -159,7 +167,7 @@ const stateCodes = {
 var availableAttributeColors = ["#8c564b", "#17becf", "#7f7f7f", "#9467bd"];
 var availableStateColors = ["#ff7f0e", "#d62728", "#e377c2", "#bcbd22"]
 
-var selectedYear = minYear;
+var selectedYear = maxYear;
 var selectedStates = [defaultState];
 var selectedAnalysis = defaultAnalysis;
 var selectedAttributes = [defaultAttribute];
@@ -195,7 +203,11 @@ function init() {
     /* Coordinates */
     initCoordinates();
 
+    /* dot */
+    initDot();
+
     updateIdioms();
+    updateDot();
   });
 }
 
@@ -257,18 +269,21 @@ function updateIdioms() {
   updateMap();
   updateLine();
   updateCoordinates();
+  updateDot();
 }
 
 function highlightState(state) {
   mapHighlightState(state);
   lineHighlightState(state);
   coordinatesHighlightState(state);
+  dotHighlightState(state);
 }
 
 function resetStateHighlight() {
   mapResetStateHighlight();
   lineResetStateHighlight();
   coordinatesResetStateHighlight();
+  dotResetStateHighlight();
 }
 
 function round(number, decimalPlaces) {
@@ -277,13 +292,13 @@ function round(number, decimalPlaces) {
 
 function formatNum(number, precision = 3) {
   if (number === null) { return null; }
-  if (number === 0) { return '0'; }
+  if (number === 0) { return "0"; }
   precision = (!precision || precision < 0) ? 0 : precision;
   let b = (number).toPrecision(2).split("e"),
     k = b.length === 1 ? 0 : Math.floor(Math.min(b[1].slice(1), 14) / 3),
     c = k < 1 ? number.toFixed(0 + precision) : (number / Math.pow(10, k * 3)).toFixed(1 + precision),
     d = c < 0 ? c : Math.abs(c),
-    e = d + ['', 'K', 'M', 'B', 'T'][k];
+    e = d + ["", "K", "M", "B", "T"][k];
   return e;
 }
 

@@ -1,6 +1,8 @@
+// TODO: implement tooltip between axis
+
 var coordinates = {
-  width: 540,
-  height: 370,
+  width: 600,
+  height: 400,
   top: 20,
   right: 30,
   bottom: 10,
@@ -10,11 +12,9 @@ var coordinates = {
 function initCoordinates() {
   d3.select("#coordinates")
     .append("svg")
-    .attr("width", coordinates.width + coordinates.left + coordinates.right)
-    .attr("height", coordinates.height + coordinates.top + coordinates.bottom)
-    .append("g")
-    .attr("transform",
-      "translate(" + coordinates.left + "," + coordinates.top + ")");
+    .attr("width", coordinates.width)
+    .attr("height", coordinates.height)
+    .append("g");
 }
 
 function updateCoordinates() {
@@ -30,7 +30,7 @@ function updateCoordinates() {
 
   /* x */
   x = d3.scalePoint()
-    .range([0, coordinates.width])
+    .range([coordinates.left, coordinates.width - coordinates.right])
     .domain(attributes);
 
   /* y */
@@ -46,7 +46,7 @@ function updateCoordinates() {
     });
     y[attribute] = d3.scaleLinear()
       .domain(yDomain)
-      .range([coordinates.height, 0]);
+      .range([coordinates.height - coordinates.bottom, coordinates.top]);
   });
 
   /* Connect axis */
@@ -82,7 +82,7 @@ function plotLines(data, attributes, x, y) {
     .each((d, i, n) => { d3.select(n[i]).call(d3.axisLeft().ticks(4).tickFormat((y) => formatNum(y)).scale(y[d])); })
     .append("text")
     .style("text-anchor", "middle")
-    .attr("y", -10)
+    .attr("y", 10)
     .text((d) => { return toAbbreviated[d]; })
     .style("fill", "black")
 }

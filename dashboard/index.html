@@ -65,6 +65,12 @@
       src="scripts/input.js"
     ></script>
 
+    <script
+      language="JavaScript"
+      type="text/javascript"
+      src="scripts/dot.js"
+    ></script>
+
     <!-- CSS -->
     <link rel="stylesheet" href="style/bootstrap.min.css" />
     <link rel="stylesheet" href="style/styles.css" />
@@ -81,7 +87,7 @@
     </div>
 
     <!-- Content -->
-    <div class="container-xxl p-4">
+    <div class="container-xxl">
       <!-- Inputs -->
       <div class="row mt-3">
         <div class="col-1 d-flex align-items-center justify-content-start">
@@ -90,7 +96,7 @@
               id="year-input"
               type="text"
               class="form-control"
-              value="1992"
+              value="2015"
               oninput="updateYearInput()"
               style="text-align: center"
             />
@@ -103,7 +109,7 @@
             min="1992"
             max="2015"
             step="1"
-            value="1992"
+            value="2015"
             id="slider-input"
             oninput="updateYearSlider()"
           />
@@ -140,7 +146,7 @@
           </div>
         </div>
       </div>
-      <div class="row mt-3">
+      <div class="row mt-2">
         <div class="col-2 d-flex align-items-center justify-content-start">
           <div class="me-3">Selected Attributes:</div>
         </div>
@@ -151,7 +157,7 @@
           ></ul>
         </div>
       </div>
-      <div class="row mt-3 pb-3 border-bottom">
+      <div class="row mt-2 pb-3 border-bottom">
         <div class="col-2 d-flex align-items-center justify-content-start">
           Selected States:
         </div>
@@ -185,9 +191,8 @@
       <!-- Dotplot and coordinates -->
       <div class="row mt-5">
         <div class="col">
-          <div id="dotPlot" class="p-2">
-            <img src="dotplot.png" , width="600" />
-          </div>
+          <div id="dotPlot" class="p-2"></div>
+          <div id="dot-tooltip"></div>
         </div>
         <div class="col">
           <div id="coordinates" class="p-2"></div>

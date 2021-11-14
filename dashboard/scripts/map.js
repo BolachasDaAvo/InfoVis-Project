@@ -175,8 +175,8 @@ function mapHandleMouseLeave(event, d) {
     });
   d3.select("#map-tooltip").style("display", "none");
 
+  clearTimeout(mapHoverDelay);
   if (selectedStates.includes(d.properties.name)) {
-    clearTimeout(mapHoverDelay);
     resetStateHighlight();
   }
 }
@@ -233,6 +233,7 @@ function addState(state) {
   filterDataByState();
   updateLine();
   updateCoordinates();
+  updateDot();
 }
 
 function removeState(state) {
@@ -264,18 +265,10 @@ function removeState(state) {
   filterDataByState();
   updateLine();
   updateCoordinates();
+  updateDot();
 }
 
 function mapHighlightState(state) {
-  selectedStates.forEach((sstate) => {
-    let element = d3.select("#map").select(`path[id="${sstate}"]`);
-    if (sstate === state) {
-      element.node().parentNode.appendChild(element.node());
-    }
-    element
-      .style("stroke", sstate === state ? stateColors[state] : "white");
-  })
-
   d3
     .select("#map")
     .selectAll("path")
@@ -287,16 +280,6 @@ function mapHighlightState(state) {
 }
 
 function mapResetStateHighlight() {
-  selectedStates.forEach((state) => {
-    let element = d3.select("#map").select(`path[id="${state}"]`);
-    element.node().parentNode.appendChild(element.node());
-
-    element
-      .transition()
-      .duration(300)
-      .style("stroke", stateColors[state]);
-  })
-
   d3
     .select("#map")
     .selectAll("path")

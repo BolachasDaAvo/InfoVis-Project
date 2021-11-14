@@ -4,7 +4,7 @@ var lineChart = {
   top: 10,
   right: 10,
   bottom: 20,
-  left: 30,
+  left: 40,
 };
 
 function initLine() {
@@ -24,8 +24,6 @@ function initLine() {
     .style("padding", "10px")
     .style("pointer-events", "none")
     .style("position", "absolute");
-
-  updateLine();
 }
 
 function updateLine() {
@@ -38,19 +36,19 @@ function updateLine() {
     .attr("width", lineChart.width)
     .attr("height", lineChart.height);
 
-  var x = d3
+  let x = d3
     .scaleLog()
     .domain([1992, 2015])
     .range([lineChart.left, lineChart.width - lineChart.right]);
 
-  var xAxis = (g) =>
+  let xAxis = (g) =>
     g
       .attr("transform", `translate(0, ${lineChart.height - lineChart.bottom})`)
       .call(d3.axisBottom(x).tickFormat((x) => x));
 
   svg.append("g").call(xAxis);
 
-  var yDomain = [Number.MAX_SAFE_INTEGER, Number.MIN_SAFE_INTEGER];
+  let yDomain = [Number.MAX_SAFE_INTEGER, Number.MIN_SAFE_INTEGER];
   if (selectedStates.length === 1) {
     /* plot all attributes */
     selectedAttributes.forEach((attribute) => {
@@ -72,12 +70,12 @@ function updateLine() {
     });
   }
 
-  var y = d3
+  let y = d3
     .scaleLinear()
     .domain(yDomain)
     .range([lineChart.height - lineChart.bottom, lineChart.top]);
 
-  var yAxis = (g) =>
+  let yAxis = (g) =>
     g
       .attr("transform", `translate(${lineChart.left}, 0)`)
       .call(d3.axisLeft(y).tickFormat((x) => formatNum(x)));
@@ -98,7 +96,7 @@ function updateLine() {
 function plotLine(state, attribute, x, y, color = "attribute") {
   const svg = d3.select("#lineChart").select("svg");
 
-  line = d3
+  let line = d3
     .line()
     .x((d) => x(d.YEAR))
     .y((d) => y(d[attribute]));
@@ -115,7 +113,7 @@ function plotLine(state, attribute, x, y, color = "attribute") {
         return stateColors[state];
       }
     })
-    .attr("stroke-width", 5)
+    .attr("stroke-width", 3)
     .attr("stroke-linejoin", "round")
     .attr("stroke-linecap", "round")
     .attr("d", line)
@@ -123,9 +121,9 @@ function plotLine(state, attribute, x, y, color = "attribute") {
     .attr("state", state)
     .attr("id", `line-${attribute}-${state}`)
     .style("cursor", "pointer")
-    .on("click", lineHandleMouseClick)
-    .on("mouseover", lineHandleMouseOver)
-    .on("mouseleave", lineHandleMouseLeave);
+    .on("click", lineLineHandleMouseClick)
+    .on("mouseover", lineLineHandleMouseOver)
+    .on("mouseleave", lineLineHandleMouseLeave);
 
 
   svg
@@ -143,32 +141,32 @@ function plotLine(state, attribute, x, y, color = "attribute") {
     .join("circle")
     .attr("cx", (d) => x(d.YEAR))
     .attr("cy", (d) => y(d[attribute]))
-    .attr("r", 6.5)
+    .attr("r", 5)
     .attr("attribute", attribute)
     .attr("state", state)
     .style("cursor", "pointer")
-    .on("mouseover", dotHandleMouseOver)
-    .on("mouseleave", dotHandleMouseLeave)
-    .on("mousemove", dotHandleMouseMove)
-    .on("click", dotHandleMouseClick);
+    .on("mouseover", lineDotHandleMouseOver)
+    .on("mouseleave", lineDotHandleMouseLeave)
+    .on("mousemove", lineDotHandleMouseMove)
+    .on("click", lineDotHandleMouseClick);
 }
 
 
 var lineDotHoverDelay = null;
-function dotHandleMouseOver(event, d) {
+function lineDotHandleMouseOver(event, d) {
   d3.select("#line-tooltip").style("display", "block");
 
   lineDotHoverDelay = setTimeout(() => { highlightState(d3.select(event.srcElement).attr("state")); }, 2000);
 }
 
-function dotHandleMouseLeave(event, d) {
+function lineDotHandleMouseLeave(event, d) {
   d3.select("#line-tooltip").style("display", "none");
 
   clearTimeout(lineDotHoverDelay);
   resetStateHighlight();
 }
 
-function dotHandleMouseMove(event, d) {
+function lineDotHandleMouseMove(event, d) {
   let attribute = d3.select(event.srcElement).attr("attribute");
 
   d3.select("#line-tooltip")
@@ -180,7 +178,7 @@ function dotHandleMouseMove(event, d) {
     .style("display", "block");
 }
 
-function dotHandleMouseClick(event, d) {
+function lineDotHandleMouseClick(event, d) {
   if (selectedAttributes.length === 0) {
     return;
   }
@@ -190,16 +188,16 @@ function dotHandleMouseClick(event, d) {
 }
 
 var lineLineHoverDelay = null;
-function lineHandleMouseOver(event, d) {
+function lineLineHandleMouseOver(event, d) {
   lineLineHoverDelay = setTimeout(() => { highlightState(d3.select(event.srcElement).attr("state")); }, 2000);
 }
 
-function lineHandleMouseLeave(event, d) {
+function lineLineHandleMouseLeave(event, d) {
   clearTimeout(lineLineHoverDelay);
   resetStateHighlight();
 }
 
-function lineHandleMouseClick(event, d) {
+function lineLineHandleMouseClick(event, d) {
   let attribute = d3.select(event.srcElement).attr("attribute");
   selectMapAttribute(attribute);
 }

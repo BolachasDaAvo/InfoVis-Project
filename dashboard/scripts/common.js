@@ -1,5 +1,3 @@
-//TODO: when hovering state reduce opacity of the other states on the other idioms
-
 const data_source = "data/data.csv";
 const map_source = "data/states.json";
 const maxYear = 2015;
@@ -259,6 +257,18 @@ function updateIdioms() {
   updateMap();
   updateLine();
   updateCoordinates();
+}
+
+function highlightState(state) {
+  mapHighlightState(state);
+  lineHighlightState(state);
+  coordinatesHighlightState(state);
+}
+
+function resetStateHighlight() {
+  mapResetStateHighlight();
+  lineResetStateHighlight();
+  coordinatesResetStateHighlight();
 }
 
 function round(number, decimalPlaces) {

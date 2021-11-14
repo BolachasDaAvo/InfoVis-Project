@@ -153,22 +153,19 @@ function plotLine(state, attribute, x, y, color = "attribute") {
     .on("click", dotHandleMouseClick);
 }
 
+
+var lineDotHoverDelay = null;
 function dotHandleMouseOver(event, d) {
   d3.select("#line-tooltip").style("display", "block");
-  let element = d3.select(event.srcElement);
 
-  d3
-    .select(`#line-${element.attr("attribute")}-${element.attr("state")}`)
-    .attr("stroke-width", 6);
+  lineDotHoverDelay = setTimeout(() => { highlightState(d3.select(event.srcElement).attr("state")); }, 2000);
 }
 
 function dotHandleMouseLeave(event, d) {
   d3.select("#line-tooltip").style("display", "none");
-  let element = d3.select(event.srcElement);
 
-  d3
-    .select(`#line-${element.attr("attribute")}-${element.attr("state")}`)
-    .attr("stroke-width", 5);
+  clearTimeout(lineDotHoverDelay);
+  resetStateHighlight();
 }
 
 function dotHandleMouseMove(event, d) {
@@ -192,19 +189,73 @@ function dotHandleMouseClick(event, d) {
   selectMapAttribute(attribute);
 }
 
+var lineLineHoverDelay = null;
 function lineHandleMouseOver(event, d) {
-  d3
-    .select(event.srcElement)
-    .attr("stroke-width", 6)
+  lineLineHoverDelay = setTimeout(() => { highlightState(d3.select(event.srcElement).attr("state")); }, 2000);
 }
 
 function lineHandleMouseLeave(event, d) {
-  d3
-    .select(event.srcElement)
-    .attr("stroke-width", 5)
+  clearTimeout(lineLineHoverDelay);
+  resetStateHighlight();
 }
 
 function lineHandleMouseClick(event, d) {
   let attribute = d3.select(event.srcElement).attr("attribute");
   selectMapAttribute(attribute);
+}
+
+function lineHighlightState(state) {
+  if (selectedStates.length === 1) {
+    return;
+  }
+  d3
+    .select("#lineChart")
+    .selectAll("path")
+    .transition()
+    .duration(200)
+    .style("opacity", (d) => {
+      if (d != null) {
+        return d[0].STATE === state ? 1 : 0.1;
+      }
+    });
+
+  d3
+    .select("#lineChart")
+    .selectAll("circle")
+    .transition()
+    .duration(200)
+    .style("opacity", (d) => {
+      if (d != null) {
+        return d.STATE === state ? 1 : 0.1;
+      }
+    });
+}
+
+function lineResetStateHighlight() {
+  if (selectedStates.length === 1) {
+    return;
+  }
+  d3
+    .select("#lineChart")
+    .selectAll("path")
+    .transition()
+    .duration(300)
+    .style("opacity", 1)
+    .style("stroke", (d) => {
+      if (d != null) {
+        return stateColors[d[0].STATE];
+      }
+    });
+
+  d3
+    .select("#lineChart")
+    .selectAll("circle")
+    .transition()
+    .duration(300)
+    .style("opacity", 1)
+    .style("fill", (d) => {
+      if (d != null) {
+        return stateColors[d.STATE];
+      }
+    });
 }

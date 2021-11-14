@@ -59,6 +59,7 @@ function initMap() {
     .attr("class", "list-group-item text-light")
     .style("background-color", stateColors[defaultState])
     .style("cursor", "pointer")
+    .on("click", () => { removeState(defaultState); })
     .text(defaultState);
 
   updateMapLegend();
@@ -138,6 +139,7 @@ function zoomed({ transform }) {
     .attr("transform", transform);
 }
 
+var mapHoverDelay = null;
 function mapHandleMouseOver(event, d) {
   d3.select(event.srcElement).node().parentNode.appendChild(d3.select(event.srcElement).node());
   d3.select(event.srcElement)
@@ -150,6 +152,10 @@ function mapHandleMouseOver(event, d) {
       }
     });
   d3.select("#map-tooltip").style("display", "block");
+
+  if (selectedStates.includes(d.properties.name)) {
+    mapHoverDelay = setTimeout(() => { highlightState(d.properties.name); }, 2000);
+  }
 }
 
 function mapHandleMouseLeave(event, d) {
@@ -168,6 +174,11 @@ function mapHandleMouseLeave(event, d) {
       }
     });
   d3.select("#map-tooltip").style("display", "none");
+
+  if (selectedStates.includes(d.properties.name)) {
+    clearTimeout(mapHoverDelay);
+    resetStateHighlight();
+  }
 }
 
 function mapHandleMouseMove(event, d) {
@@ -205,6 +216,7 @@ function addState(state) {
     .attr("class", "list-group-item text-light")
     .style("background-color", color)
     .style("cursor", "pointer")
+    .on("click", () => { removeState(state); })
     .text(state);
 
   /* Add highlight */
@@ -252,6 +264,45 @@ function removeState(state) {
   filterDataByState();
   updateLine();
   updateCoordinates();
+}
+
+function mapHighlightState(state) {
+  selectedStates.forEach((sstate) => {
+    let element = d3.select("#map").select(`path[id="${sstate}"]`);
+    if (sstate === state) {
+      element.node().parentNode.appendChild(element.node());
+    }
+    element
+      .style("stroke", sstate === state ? stateColors[state] : "white");
+  })
+
+  d3
+    .select("#map")
+    .selectAll("path")
+    .transition()
+    .duration(200)
+    .style("opacity", (d) => {
+      return d.properties.name === state ? 1 : 0.2;
+    });
+}
+
+function mapResetStateHighlight() {
+  selectedStates.forEach((state) => {
+    let element = d3.select("#map").select(`path[id="${state}"]`);
+    element.node().parentNode.appendChild(element.node());
+
+    element
+      .transition()
+      .duration(300)
+      .style("stroke", stateColors[state]);
+  })
+
+  d3
+    .select("#map")
+    .selectAll("path")
+    .transition()
+    .duration(300)
+    .style("opacity", 1);
 }
 
 // Copyright 2021, Observable Inc.

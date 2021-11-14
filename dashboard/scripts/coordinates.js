@@ -68,9 +68,10 @@ function plotLines(data, attributes, x, y) {
     })
     .style("fill", "none")
     .style("stroke", (d) => {
-      console.log(d);
       return stateColors[d.STATE];
-    });
+    })
+    .on("mouseover", coordinatesHandleMouseOver)
+    .on("mouseleave", coordinatesHandleMouseLeave);
 
   svg
     .selectAll("axis")
@@ -84,4 +85,36 @@ function plotLines(data, attributes, x, y) {
     .attr("y", -10)
     .text((d) => { return toAbbreviated[d]; })
     .style("fill", "black")
+}
+
+var coordinatesHoverDelay = null;
+function coordinatesHandleMouseOver(event, d) {
+  coordinatesHoverDelay = setTimeout(() => { highlightState(d.STATE); }, 2000);
+}
+
+function coordinatesHandleMouseLeave(event, d) {
+  clearTimeout(coordinatesHoverDelay);
+  resetStateHighlight();
+}
+
+function coordinatesHighlightState(state) {
+  d3
+    .select("#coordinates")
+    .selectAll("path")
+    .transition()
+    .duration(200)
+    .style("opacity", (d) => {
+      if (d != null) {
+        return d.STATE === state ? 1 : 0.1;
+      }
+    });
+}
+
+function coordinatesResetStateHighlight() {
+  d3
+    .select("#coordinates")
+    .selectAll("path")
+    .transition()
+    .duration(300)
+    .style("opacity", 1);
 }

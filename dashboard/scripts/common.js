@@ -105,14 +105,16 @@ const toAbbreviated = {
   AVERAGE_SCORE_GROSS: "NAEP Score",
   AVERAGE_SCORE_PCT: "NAEP Score",
 }
-const stateList = ["Alabama", "Arizona", "Arkansas", "California", "Colorado", "Connecticut",
+const stateList = [
+  "Alabama", "Arizona", "Arkansas", "California", "Colorado", "Connecticut",
   "Delaware", "Florida", "Georgia", "Idaho", "Illinois", "Indiana", "Iowa",
   "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts",
   "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska",
   "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York",
   "North Carolina", "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania",
   "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah",
-  "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming"]
+  "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming"
+]
 const stateCodes = {
   "Alabama": "AL",
   "Nebraska": "NE",
@@ -186,8 +188,9 @@ function init() {
     initAnalysis();
     renderAttributes();
     initAttributes();
+    renderStates();
+    initStates();
     initMapAttribute();
-    // startAttributesList();
 
     data = d;
     topology = t;

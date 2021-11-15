@@ -53,14 +53,6 @@ function initMap() {
   let element = d3.select(`path[id="${defaultState}"]`)
   element.node().parentNode.appendChild(element.node())
   element.style("stroke", stateColors[defaultState]).style("stroke-width", 3)
-  d3.select("#states-list")
-    .append("li")
-    .attr("id", `states-list-item-${defaultState}`)
-    .attr("class", "list-group-item text-light")
-    .style("background-color", stateColors[defaultState])
-    .style("cursor", "pointer")
-    .on("click", () => { removeState(defaultState); })
-    .text(defaultState);
 
   updateMapLegend();
   updateMap();
@@ -195,77 +187,7 @@ function mapHandleMouseMove(event, d) {
 }
 
 function mapHandleMouseClick(event, d) {
-  if (selectedStates.includes(d.properties.name)) {
-    removeState(d.properties.name);
-  } else {
-    addState(d.properties.name);
-  }
-}
-
-function addState(state) {
-  if (selectedStates.length >= 5) {
-    pushToast("Choropleth map", "Can only have up to 5 states selected")
-    return;
-  }
-
-  /* Add to UI list */
-  let color = assignStateColor(state);
-  d3.select("#states-list")
-    .append("li")
-    .attr("id", `states-list-item-${state}`)
-    .attr("class", "list-group-item text-light")
-    .style("background-color", color)
-    .style("cursor", "pointer")
-    .on("click", () => { removeState(state); })
-    .text(state);
-
-  /* Add highlight */
-  let element = d3.select(`path[id="${state}"]`);
-  element.node().parentNode.appendChild(element.node());
-  element
-    .style("stroke", color)
-    .style("stroke-width", 3);
-
-  /* Add to internal list */
-  selectedStates.push(state);
-
-  /* Update idioms */
-  filterDataByState();
-  updateLine();
-  updateCoordinates();
-  updateDot();
-}
-
-function removeState(state) {
-  if (selectedStates.length <= 1) {
-    pushToast("Choropleth map", "Must have at least one state selected")
-    return;
-  }
-
-  /* Remove from UI list */
-  d3.select(`li[id="states-list-item-${state}"]`).remove();
-  freeStateColor(state);
-
-  /* Remove highlight */
-  d3.select(`path[id="${state}"]`)
-    .style("stroke", "white")
-    .style("stroke-width", 1);
-
-  /* Remove from internal list */
-  selectedStates.splice(selectedStates.indexOf(state), 1);
-
-  /* Recolor states */
-  selectedStates.forEach((state) => {
-    let element = d3.select(`path[id="${state}"]`)
-    element.node().parentNode.appendChild(element.node());
-    element.style("stroke", stateColors[state]);
-  });
-
-  /* Update idioms */
-  filterDataByState();
-  updateLine();
-  updateCoordinates();
-  updateDot();
+  selectState(d.properties.name);
 }
 
 function mapHighlightState(state) {

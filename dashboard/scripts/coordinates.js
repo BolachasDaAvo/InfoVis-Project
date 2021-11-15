@@ -136,8 +136,11 @@ function plotAxis() {
     .append("text")
     .style("text-anchor", "middle")
     .attr("y", 10)
+    .attr("class", "heavy")
     .text((d) => { return toAbbreviated[d]; })
-    .style("fill", "black")
+    .style("fill", (d) => attributeColors[d] || "black")
+    .style("font-weight", "bolder")
+    .style("font-size", "10px")
     .style("cursor", "move")
     .style("cursor", "grab");
 }
@@ -181,10 +184,12 @@ function coordinatesHandleDragEnd(event, d) {
 
 var coordinatesHoverDelay = null;
 function coordinatesHandleMouseOver(event, d) {
+  console.log("mouse enter");
   coordinatesHoverDelay = setTimeout(() => { highlightState(d.STATE); }, 2000);
 }
 
 function coordinatesHandleMouseLeave(event, d) {
+  console.log("mouse leave");
   clearTimeout(coordinatesHoverDelay);
   resetStateHighlight();
 }

@@ -151,7 +151,6 @@ function plotLine(state, attribute, x, y, color = "attribute") {
     .on("click", lineDotHandleMouseClick);
 }
 
-
 var lineDotHoverDelay = null;
 function lineDotHandleMouseOver(event, d) {
   d3.select("#line-tooltip").style("display", "block");

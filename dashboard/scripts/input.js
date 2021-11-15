@@ -320,6 +320,9 @@ function addAttribute(attribute) {
   let color = assignAttributeColor(attribute);
   attributesListAddAttribute(attribute, color);
 
+  /* Update text color on coordinates */
+  plotAxis();
+
   /* Add to internal list */
   selectedAttributes.push(attribute);
 
@@ -343,6 +346,9 @@ function removeAttribute(attribute) {
   /* Remove from UI list */
   attributesListRemoveAttribute(attribute)
   freeAttributeColor(attribute);
+
+  /* Update text color on coordinates */
+  plotAxis();
 
   /* Remove from internal list */
   selectedAttributes.splice(selectedAttributes.indexOf(attribute), 1);

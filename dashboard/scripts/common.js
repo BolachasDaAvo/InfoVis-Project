@@ -112,7 +112,7 @@ const stateList = [
   "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska",
   "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York",
   "North Carolina", "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania",
-  "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah",
+  "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah",
   "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming"
 ]
 const stateCodes = {
@@ -140,7 +140,6 @@ const stateCodes = {
   "Pennsylvania": "PA",
   "Idaho": "ID",
   "Illinois": "IL",
-  "Rhode Island": "RI",
   "Indiana": "IN",
   "South Carolina": "SC",
   "Iowa": "IA",

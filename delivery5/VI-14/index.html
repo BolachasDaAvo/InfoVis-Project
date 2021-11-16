@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Investment in Education</title>
+
+    <!-- Import libraries. -->
+    <script
+      language="JavaScript"
+      type="text/javascript"
+      src="libs/d3.min.js"
+    ></script>
+
+    <script
+      language="JavaScript"
+      type="text/javascript"
+      src="libs/bootstrap.bundle.min.js"
+    ></script>
+
+    <script
+      language="JavaScript"
+      type="text/javascript"
+      src="libs/topojson.min.js"
+    ></script>
+
+    <script
+      language="JavaScript"
+      type="text/javascript"
+      src="libs/Sortable.min.js"
+    ></script>
+
+    <!-- JS -->
+    <script
+      language="JavaScript"
+      type="text/javascript"
+      src="scripts/line.js"
+    ></script>
+
+    <script
+      language="JavaScript"
+      type="text/javascript"
+      src="scripts/map.js"
+    ></script>
+
+    <script
+      language="JavaScript"
+      type="text/javascript"
+      src="scripts/coordinates.js"
+    ></script>
+
+    <script
+      language="JavaScript"
+      type="text/javascript"
+      src="scripts/common.js"
+    ></script>
+
+    <script
+      language="JavaScript"
+      type="text/javascript"
+      src="scripts/input.js"
+    ></script>
+
+    <script
+      language="JavaScript"
+      type="text/javascript"
+      src="scripts/dot.js"
+    ></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style/bootstrap.min.css" />
+    <link rel="stylesheet" href="style/styles.css" />
+  </head>
+
+  <body onload="init();">
+    <!-- Toasts -->
+    <div aria-live="polite" aria-atomic="true" class="position-relative">
+      <div
+        id="toast-list"
+        class="toast-container position-absolute top-0 end-0 p-3"
+        style="z-index: 1"
+      ></div>
+    </div>
+
+    <!-- Content -->
+    <div class="container-xxl">
+      <!-- Inputs -->
+      <div class="row mt-3">
+        <div class="col-1 d-flex align-items-center justify-content-start">
+          <div class="input-group" style="width: 70px">
+            <input
+              id="year-input"
+              type="text"
+              class="form-control"
+              value="2015"
+              oninput="updateYearInput()"
+              style="text-align: center"
+            />
+          </div>
+        </div>
+        <div class="col-6 d-flex align-items-center justify-content-start">
+          <input
+            type="range"
+            class="form-range"
+            min="1992"
+            max="2015"
+            step="1"
+            value="2015"
+            id="slider-input"
+            oninput="updateYearSlider()"
+          />
+        </div>
+        <div class="col-3 d-flex align-items-center justify-content-start">
+          <div class="dropdown">
+            <button
+              class="btn btn-primary dropdown-toggle"
+              type="button"
+              data-bs-toggle="dropdown"
+            >
+              Analysis
+            </button>
+            <ul
+              id="analysis-menu"
+              class="dropdown-menu overflow-auto"
+              style="max-height: 200px"
+            ></ul>
+          </div>
+          <div class="dropdown ms-3">
+            <button
+              class="btn btn-primary dropdown-toggle"
+              type="button"
+              data-bs-toggle="dropdown"
+              data-bs-auto-close="outside"
+            >
+              Attributes
+            </button>
+            <ul
+              id="attribute-menu"
+              class="dropdown-menu overflow-auto"
+              style="max-height: 200px"
+            ></ul>
+          </div>
+          <div class="dropdown ms-3">
+            <button
+              class="btn btn-primary dropdown-toggle"
+              type="button"
+              data-bs-toggle="dropdown"
+              data-bs-auto-close="outside"
+            >
+              States
+            </button>
+            <ul
+              id="state-menu"
+              class="dropdown-menu overflow-auto"
+              style="max-height: 200px"
+            ></ul>
+          </div>
+        </div>
+      </div>
+      <div class="row mt-3">
+        <div class="col-2 d-flex align-items-center justify-content-start">
+          <div class="me-3">Selected Attributes:</div>
+        </div>
+        <div class="col d-flex align-items-center justify-content-start">
+          <ul
+            id="attributes-list"
+            class="list-group list-group-horizontal"
+          ></ul>
+        </div>
+      </div>
+      <div class="row mt-2 pb-3 border-bottom">
+        <div class="col-2 d-flex align-items-center justify-content-start">
+          Selected States:
+        </div>
+        <div class="col d-flex align-items-center justify-content-start">
+          <ul id="states-list" class="list-group list-group-horizontal"></ul>
+        </div>
+      </div>
+
+      <!-- Map and Line -->
+      <div class="row mt-3">
+        <div class="col pt-3">
+          <div id="map" class="p-2"></div>
+          <div id="map-color-legend"></div>
+          <div id="map-tooltip"></div>
+        </div>
+        <div class="col">
+          <div id="lineChart" class="p-2"></div>
+          <div id="line-tooltip"></div>
+        </div>
+      </div>
+
+      <!-- Dotplot and coordinates -->
+      <div class="row mt-3">
+        <div class="col">
+          <div id="dotPlot" class="p-2"></div>
+          <div id="dot-tooltip"></div>
+        </div>
+        <div class="col">
+          <div id="coordinates" class="p-2"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

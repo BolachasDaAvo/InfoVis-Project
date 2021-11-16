@@ -1,5 +1,3 @@
-// TODO: implement tooltip between axis
-
 var coordinates = {
   width: 600,
   height: 400,
@@ -184,12 +182,10 @@ function coordinatesHandleDragEnd(event, d) {
 
 var coordinatesHoverDelay = null;
 function coordinatesHandleMouseOver(event, d) {
-  console.log("mouse enter");
   coordinatesHoverDelay = setTimeout(() => { highlightState(d.STATE); }, 2000);
 }
 
 function coordinatesHandleMouseLeave(event, d) {
-  console.log("mouse leave");
   clearTimeout(coordinatesHoverDelay);
   resetStateHighlight();
 }
